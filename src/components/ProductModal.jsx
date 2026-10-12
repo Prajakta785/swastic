@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Star, ShoppingBag, CheckCircle2, Shield, Sparkles, MessageCircle } from 'lucide-react';
+import { X, Star, CheckCircle2, Shield, Sparkles, MessageCircle, Phone } from 'lucide-react';
 
-export default function ProductModal({ product, onClose, onAddToCart }) {
-  const [selectedSize, setSelectedSize] = useState(8);
+export default function ProductModal({ product, onClose }) {
   const [selectedColor, setSelectedColor] = useState('');
-  const [quantity, setQuantity] = useState(1);
   const [activePhoto, setActivePhoto] = useState('');
-  const [addedSuccess, setAddedSuccess] = useState(false);
 
   useEffect(() => {
     if (product) {
-      setSelectedSize(product.sizes[2] || 8);
       setSelectedColor(product.colors[0]?.name || 'Standard');
-      setQuantity(1);
       setActivePhoto(product.image);
-      setAddedSuccess(false);
     }
   }, [product]);
 
@@ -24,24 +18,14 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
   const galleryImages =
     product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
 
-  const handleAddToCart = () => {
-    for (let i = 0; i < quantity; i += 1) {
-      onAddToCart(product, selectedSize, selectedColor);
-    }
-    setAddedSuccess(true);
-    setTimeout(() => setAddedSuccess(false), 1600);
-  };
-
   const handleWhatsAppDirectInquiry = () => {
     const message = encodeURIComponent(
-      `Namaste Swastic Footwear! I would like to inquire about / order:\n\n` +
+      `Namaste Swastic Footwear! I would like to inquire about:\n\n` +
         `• Product: ${product.name}\n` +
-        `• Size (UK/IN): ${selectedSize}\n` +
-        `• Finish: ${selectedColor}\n` +
-        `• Quantity: ${quantity}\n\n` +
-        `Please share availability and details.`
+        `• Finish: ${selectedColor}\n\n` +
+        `Please share details.`
     );
-    window.open(`https://wa.me/919876543210?text=${message}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/917385127438?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -141,90 +125,52 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
                 ))}
               </ul>
 
-              {/* Options */}
-              <div className="modal-options-group">
-                <div className="modal-option-block">
-                  <label className="option-label">
-                    Leather Finish: <strong>{selectedColor}</strong>
-                  </label>
-                  <div className="color-swatch-list">
-                    {product.colors.map((color) => (
-                      <button
-                        key={color.name}
-                        type="button"
-                        className={`color-swatch-pill ${
-                          selectedColor === color.name ? 'selected' : ''
-                        }`}
-                        onClick={() => setSelectedColor(color.name)}
-                      >
-                        <span
-                          className="swatch-dot"
-                          style={{ backgroundColor: color.hex }}
-                        />
-                        <span>{color.name}</span>
-                      </button>
-                    ))}
+              {/* Leather Finish Option */}
+              {product.colors && product.colors.length > 1 && (
+                <div className="modal-options-group">
+                  <div className="modal-option-block">
+                    <label className="option-label">
+                      Available Finish: <strong>{selectedColor}</strong>
+                    </label>
+                    <div className="color-swatch-list">
+                      {product.colors.map((color) => (
+                        <button
+                          key={color.name}
+                          type="button"
+                          className={`color-swatch-pill ${
+                            selectedColor === color.name ? 'selected' : ''
+                          }`}
+                          onClick={() => setSelectedColor(color.name)}
+                        >
+                          <span
+                            className="swatch-dot"
+                            style={{ backgroundColor: color.hex }}
+                          />
+                          <span>{color.name}</span>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                <div className="modal-option-block">
-                  <label className="option-label">
-                    Select Indian / UK Size: <strong>Size {selectedSize}</strong>
-                  </label>
-                  <div className="size-pills">
-                    {product.sizes.map((size) => (
-                      <button
-                        key={size}
-                        type="button"
-                        className={`size-pill ${selectedSize === size ? 'active' : ''}`}
-                        onClick={() => setSelectedSize(size)}
-                      >
-                        {size}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="modal-qty-row">
-                  <span className="option-label">Quantity:</span>
-                  <div className="qty-stepper">
-                    <button
-                      type="button"
-                      onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                      aria-label="Decrease quantity"
-                    >
-                      −
-                    </button>
-                    <span>{quantity}</span>
-                    <button
-                      type="button"
-                      onClick={() => setQuantity((q) => q + 1)}
-                      aria-label="Increase quantity"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </div>
+              )}
 
               <div className="modal-cta-row">
-                <button
-                  type="button"
-                  className="btn btn-primary btn-lg modal-main-btn"
-                  onClick={handleAddToCart}
-                >
-                  <ShoppingBag size={18} />
-                  <span>{addedSuccess ? 'Added to Cart!' : 'Add to Cart'}</span>
-                </button>
-
                 <button
                   type="button"
                   className="btn btn-whatsapp btn-lg"
                   onClick={handleWhatsAppDirectInquiry}
                 >
                   <MessageCircle size={18} />
-                  <span>Order on WhatsApp</span>
+                  <span>Inquire on WhatsApp (+91 73851 27438)</span>
                 </button>
+
+                <a
+                  href="tel:+917385127438"
+                  className="btn btn-primary btn-lg modal-main-btn"
+                >
+                  <Phone size={18} />
+                  <span>Call +91 73851 27438</span>
+                </a>
               </div>
 
               <div className="modal-assurance">

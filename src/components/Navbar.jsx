@@ -64,11 +64,11 @@ export default function Navbar({
   ];
 
   const marqueeItems = [
-    '⚡ FLASH SALE LIVE: UP TO 45% OFF',
-    '🩴 ULTRA-LIGHT CUSHIONED LEATHER FOOTBED',
-    '📦 CASH ON DELIVERY AVAILABLE',
-    '✨ 30-DAY NO-QUESTIONS-ASKED RETURNS',
-    '⚡ FAST & SAFE DELIVERY ACROSS INDIA'
+    '✨ PREMIUM GENUINE LEATHER SANDALS • परंपरेची आधुनिक पावलं',
+    '🩴 LIGHTWEIGHT & COMFORTABLE FOOTBED FOR ALL DAY EASE',
+    '🔨 DURABLE STITCHING & FINE CRAFTSMANSHIP IN EVERY STITCH',
+    '🛡️ ANTI-SLIP SOLE FOR BETTER GRIP & SAFETY',
+    '📞 CALL OR WHATSAPP: +91 73851 27438'
   ];
 
   const handleLinkClick = (e, href) => {
@@ -92,30 +92,20 @@ export default function Navbar({
 
   return (
     <header className={`navbar-wrapper ${scrolled ? 'navbar-scrolled' : ''}`}>
-      {/* TIER 1: Dark Slate Top Promo Bar (Matches Uploaded Theme Screenshot) */}
+      {/* TIER 1: Dark Slate Top Promo Bar */}
       <div className="top-promo-bar">
         <div className="container top-promo-inner">
           <div className="top-promo-left">
             <span className="limited-drop-pill">
               <Zap size={12} fill="currentColor" />
-              LIMITED DROP
+              SWASTIC FOOTWEAR
             </span>
             <p className="promo-code-text">
-              Use code <strong>STRIDE20</strong> for 20% off all new season arrivals!
+              Tradition in Every Step • <strong>परंपरेची आधुनिक पावलं</strong>
             </p>
           </div>
 
           <div className="top-promo-right">
-            <button
-              type="button"
-              className="photo-customizer-pill"
-              onClick={onOpenPhotoManager}
-              title="Upload or manage product photos"
-            >
-              <Camera size={12} />
-              <span>Custom Photos</span>
-            </button>
-            <span className="promo-divider">|</span>
             <a
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
@@ -125,16 +115,16 @@ export default function Navbar({
               <span>Store Finder</span>
             </a>
             <span className="promo-divider">|</span>
-            <a href="tel:+9118005557874" className="top-utility-link">
+            <a href="tel:+917385127438" className="top-utility-link">
               <Phone size={13} />
-              <span>+91 1800 555 7874</span>
+              <span>+91 73851 27438</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* TIER 2: Vibrant Orange Scrolling Marquee Ticker Bar (Matches Uploaded Theme Screenshot) */}
-      <div className="orange-marquee-bar" aria-label="Promotional Highlights">
+      {/* TIER 2: Vibrant Orange Scrolling Marquee Ticker Bar */}
+      <div className="orange-marquee-bar" aria-label="Craftsmanship Highlights">
         <div className="marquee-track">
           {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, idx) => (
             <span key={idx} className="marquee-item">
@@ -180,7 +170,7 @@ export default function Navbar({
           </div>
         </a>
 
-        {/* Desktop Navigation Links (Matches Uploaded Reference Style with Active Orange Bar & Categories Dropdown) */}
+        {/* Desktop Navigation Links */}
         <ul className="nav-links">
           {navLinks.map((link) => {
             if (link.isDropdown) {
@@ -257,7 +247,7 @@ export default function Navbar({
           })}
         </ul>
 
-        {/* Right Actions: Search, Theme Switcher & Animated Cart Button */}
+        {/* Right Actions: Search, Theme Switcher & Direct Call Button */}
         <div className="nav-actions">
           <div className={`nav-search-box ${searchOpen ? 'open' : ''}`}>
             <button
@@ -309,24 +299,14 @@ export default function Navbar({
             </span>
           </button>
 
-          <motion.button
-            key={cartBounceKey}
-            type="button"
+          <a
+            href="tel:+917385127438"
             className="cart-trigger-btn"
-            onClick={onOpenCart}
-            initial={{ scale: 1 }}
-            animate={
-              cartBounceKey > 0
-                ? { scale: [1, 1.16, 0.94, 1.05, 1], rotate: [0, -6, 6, 0] }
-                : { scale: 1 }
-            }
-            transition={{ duration: 0.45 }}
-            aria-label={`Shopping cart with ${cartCount} items`}
+            aria-label="Call Swastic Footwear +91 73851 27438"
           >
-            <ShoppingBag size={18} />
-            <span className="cart-btn-label">Cart</span>
-            <span className="cart-badge">{cartCount}</span>
-          </motion.button>
+            <Phone size={16} />
+            <span className="cart-btn-label">73851 27438</span>
+          </a>
 
           <button
             type="button"
@@ -373,16 +353,12 @@ export default function Navbar({
                 ))}
               </ul>
               <div className="mobile-drawer-footer">
-                <button
-                  type="button"
-                  className="btn btn-secondary btn-full"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenPhotoManager();
-                  }}
+                <a
+                  href="tel:+917385127438"
+                  className="btn btn-primary btn-full"
                 >
-                  <Camera size={16} /> Manage / Upload Product Photos
-                </button>
+                  <Phone size={16} /> Call +91 73851 27438
+                </a>
               </div>
             </div>
           </motion.div>

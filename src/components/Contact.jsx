@@ -24,7 +24,7 @@ export default function Contact() {
         `Interested In: ${formData.interest}\n` +
         `Message: ${formData.message || 'Please share footwear details and availability.'}`
     );
-    window.open(`https://wa.me/919876543210?text=${text}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/917385127438?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -40,8 +40,8 @@ export default function Contact() {
           <span className="section-eyebrow">GET IN TOUCH</span>
           <h2 className="section-title">Contact Swastic Footwear</h2>
           <p className="section-description">
-            Have a question about sizing, bulk festive orders, or availability? Reach out to us
-            directly via WhatsApp or send an inquiry below.
+            Have a question about our traditional chappals, bulk festive orders, or availability?
+            Reach out to us directly via WhatsApp or send an inquiry below.
           </p>
         </motion.div>
 
@@ -56,8 +56,8 @@ export default function Contact() {
           >
             <h3>Store &amp; Order Support</h3>
             <p className="contact-intro">
-              We assist customers across India with size guidance (Sizes 6–10) and direct WhatsApp
-              order confirmation.
+              We assist customers across India with handcrafted footwear inquiries and direct
+              WhatsApp order confirmation.
             </p>
 
             <div className="contact-detail-list">
@@ -66,8 +66,8 @@ export default function Contact() {
                   <Phone size={19} />
                 </div>
                 <div>
-                  <span>Phone / WhatsApp Orders (Sample Number)</span>
-                  <strong>+91 98765 43210</strong>
+                  <span>Phone / WhatsApp Orders</span>
+                  <strong>+91 73851 27438</strong>
                 </div>
               </div>
 
@@ -105,7 +105,7 @@ export default function Contact() {
             <div className="contact-whatsapp-box">
               <div>
                 <strong>Prefer Instant Chat?</strong>
-                <p>Message us directly on WhatsApp for quick photos, size help, or order booking.</p>
+                <p>Message us directly on WhatsApp (+91 73851 27438) for quick photos or order booking.</p>
               </div>
               <button
                 type="button"
@@ -113,7 +113,7 @@ export default function Contact() {
                 onClick={handleSendWhatsApp}
               >
                 <MessageCircle size={18} />
-                <span>Chat with Swastic Footwear on WhatsApp</span>
+                <span>Chat on WhatsApp (+91 73851 27438)</span>
               </button>
             </div>
           </motion.div>
@@ -132,8 +132,7 @@ export default function Contact() {
                 <CheckCircle2 size={42} className="gold-icon" />
                 <h4>Thank You for Reaching Out!</h4>
                 <p>
-                  Your inquiry has been recorded in this demo preview. For immediate response, click
-                  below to send your message straight to our WhatsApp!
+                  Click below to send your inquiry straight to our WhatsApp (+91 73851 27438)!
                 </p>
                 <div className="contact-success-actions">
                   <button
@@ -173,7 +172,7 @@ export default function Contact() {
                     id="contact-mobile"
                     type="tel"
                     required
-                    placeholder="e.g., 9876543210"
+                    placeholder="e.g., 73851 27438"
                     value={formData.mobile}
                     onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                   />
@@ -186,6 +185,9 @@ export default function Contact() {
                     value={formData.interest}
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
                   >
+                    <option value="Premium Leather Sandals (Red Gonda)">
+                      Premium Leather Sandals (Red Gonda)
+                    </option>
                     <option value="Traditional Brown Leather Chappal">
                       Traditional Brown Leather Chappal
                     </option>
@@ -205,12 +207,12 @@ export default function Contact() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="contact-message">Your Message or Size Question *</label>
+                  <label htmlFor="contact-message">Your Message *</label>
                   <textarea
                     id="contact-message"
                     rows="4"
                     required
-                    placeholder="Tell us the size (6–10) or quantity you are looking for..."
+                    placeholder="Tell us which chappal design or quantity you are looking for..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />

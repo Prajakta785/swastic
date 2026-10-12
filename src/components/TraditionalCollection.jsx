@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Sparkles, Check, Camera } from 'lucide-react';
 import { REAL_WORKSHOP_GALLERY } from '../data/products';
 
-export default function TraditionalCollection({ products, onQuickView, onAddToCart }) {
+export default function TraditionalCollection({ products, onQuickView }) {
   const brownProduct = products[0];
-  const whiteProduct = products[1];
-  const kolhapuriGondaProduct = products[3] || products[0];
-  const whiteBlackStrapProduct = products[6] || products[1];
+  const whiteProduct = products[2] || products[1];
+  const kolhapuriGondaProduct = products[4] || products[0];
+  const whiteBlackStrapProduct = products[7] || products[1];
 
   return (
     <section id="collection" className="collection-section section-padding">
@@ -38,23 +38,23 @@ export default function TraditionalCollection({ products, onQuickView, onAddToCa
             transition={{ duration: 0.55 }}
           >
             <div className="editorial-img-box rt-editorial-stage" onClick={() => onQuickView(brownProduct)}>
-              <span className="rt-dark-pill">Signature Brown Edition</span>
+              <span className="rt-dark-pill">Flagship Heritage Edition</span>
               <div className="rt-photo-frame">
                 <img src={brownProduct.image} alt={brownProduct.name} />
               </div>
             </div>
             <div className="editorial-content">
               <div className="editorial-eyebrow">
-                <Sparkles size={14} /> GOLDEN MEDALLION &amp; DUAL VENI CORDS
+                <Sparkles size={14} /> PREMIUM GENUINE LEATHER • परंपरेची आधुनिक पावलं
               </div>
               <h3>{brownProduct.name}</h3>
               <p>
-                Hand-embossed chestnut-brown leather featuring a golden sunburst medallion, scalloped
-                strap edges, and dual braided cords knotted on a traditional stamped footbed.
+                Handcrafted genuine leather Kolhapuri sandals featuring traditional red Gonda
+                detailing, strong embossed toe grip for better comfort, and an anti-slip sole.
               </p>
               <ul className="editorial-points">
-                <li><Check size={15} /> Authentic geometric hand-stamped strap &amp; border</li>
-                <li><Check size={15} /> Dual braided cords with traditional leather knots</li>
+                <li><Check size={15} /> Premium genuine leather with fine craftsmanship in every stitch</li>
+                <li><Check size={15} /> Strong toe grip &amp; anti-slip sole for all-day ease</li>
               </ul>
               <div className="editorial-footer">
                 <div className="editorial-btns">
@@ -65,13 +65,6 @@ export default function TraditionalCollection({ products, onQuickView, onAddToCa
                   >
                     <span>Explore Pair</span>
                     <ArrowUpRight size={16} />
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-outline-light-sm"
-                    onClick={() => onAddToCart(brownProduct, 8, brownProduct.colors[0].name)}
-                  >
-                    + Add Size 8
                   </button>
                 </div>
               </div>
@@ -114,13 +107,6 @@ export default function TraditionalCollection({ products, onQuickView, onAddToCa
                   >
                     <span>Explore Pair</span>
                     <ArrowUpRight size={16} />
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-outline-card btn-sm"
-                    onClick={() => onAddToCart(whiteProduct, 8, whiteProduct.colors[0].name)}
-                  >
-                    + Add Size 8
                   </button>
                 </div>
               </div>

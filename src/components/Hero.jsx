@@ -134,7 +134,7 @@ export default function Hero({ products, onNavigate, onQuickView, onAddToCart })
               <ShieldCheck size={18} className="gold-icon" />
               <div>
                 <strong>All-Day Comfort</strong>
-                <span>Genuine Leather Footbed • Sizes 6–10</span>
+                <span>Genuine Leather Footbed • Anti-Slip Sole</span>
               </div>
             </div>
           </motion.div>
@@ -154,7 +154,7 @@ export default function Hero({ products, onNavigate, onQuickView, onAddToCart })
             <div className="hero-main-photo-card">
               {/* Top-Left NEW RELEASE Dark Pill */}
               <div className="hero-new-release-pill">
-                <span>NEW RELEASE • {activeIndex + 1}/{heroItems.length}</span>
+                <span>{spotlightProduct.badge || 'FEATURED'} • {activeIndex + 1}/{heroItems.length}</span>
               </div>
 
               {/* Floating Right Feature Pill */}
@@ -230,11 +230,9 @@ export default function Hero({ products, onNavigate, onQuickView, onAddToCart })
                 <button
                   type="button"
                   className="btn btn-gold-sm"
-                  onClick={() =>
-                    onAddToCart(spotlightProduct, 8, spotlightProduct.colors[0].name)
-                  }
+                  onClick={() => onQuickView(spotlightProduct)}
                 >
-                  + Add Size 8
+                  View Details
                 </button>
               </div>
             </div>

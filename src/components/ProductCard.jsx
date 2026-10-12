@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, ShoppingBag, Eye, Check, Feather } from 'lucide-react';
+import { Star, Eye, Feather, MessageCircle } from 'lucide-react';
 
-export default function ProductCard({ product, index, onAddToCart, onQuickView }) {
-  const [selectedSize, setSelectedSize] = useState(product.sizes[2] || 8);
-  const [selectedColor] = useState(product.colors[0]?.name || 'Standard');
-  const [justAdded, setJustAdded] = useState(false);
-
-  const handleAdd = () => {
-    onAddToCart(product, selectedSize, selectedColor);
-    setJustAdded(true);
-    setTimeout(() => setJustAdded(false), 1400);
-  };
+export default function ProductCard({ product, index, onQuickView }) {
+  const whatsappUrl = `https://wa.me/917385127438?text=${encodeURIComponent(
+    `Namaste Swastic Footwear! I would like to inquire about: ${product.name}`
+  )}`;
 
   return (
     <motion.article
@@ -56,7 +50,7 @@ export default function ProductCard({ product, index, onAddToCart, onQuickView }
       <div className="product-body">
         <div className="product-meta-row">
           <span className="product-category-tag">SIGNATURE SERIES • {product.category}</span>
-          <div className="product-rating" title={`Sample Rating: ${product.rating} out of 5`}>
+          <div className="product-rating" title={`Rating: ${product.rating} out of 5`}>
             <Star size={14} fill="#D49B35" stroke="#D49B35" />
             <span className="rating-score">{product.rating}</span>
             <span className="rating-count">({product.reviewCount})</span>
@@ -68,28 +62,7 @@ export default function ProductCard({ product, index, onAddToCart, onQuickView }
         </h3>
         <p className="product-subtitle">{product.subtitle}</p>
 
-
-        {/* Size Selector (6, 7, 8, 9, 10) */}
-        <div className="product-option-row">
-          <div className="size-header">
-            <span className="option-label">Select Size (UK/India):</span>
-            <span className="selected-size-indicator">Size {selectedSize}</span>
-          </div>
-          <div className="size-pills" role="radiogroup" aria-label="Select footwear size">
-            {product.sizes.map((size) => (
-              <button
-                key={size}
-                type="button"
-                className={`size-pill ${selectedSize === size ? 'active' : ''}`}
-                onClick={() => setSelectedSize(size)}
-              >
-                {size}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Action Buttons: View Details & Add to Cart */}
+        {/* Action Buttons: View Details & Direct WhatsApp Inquiry */}
         <div className="product-actions">
           <button
             type="button"
@@ -100,24 +73,15 @@ export default function ProductCard({ product, index, onAddToCart, onQuickView }
             <span>View Details</span>
           </button>
 
-          <motion.button
-            type="button"
-            whileTap={{ scale: 0.96 }}
-            className={`btn btn-add-cart ${justAdded ? 'added' : ''}`}
-            onClick={handleAdd}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-add-cart"
           >
-            {justAdded ? (
-              <>
-                <Check size={16} />
-                <span>Added!</span>
-              </>
-            ) : (
-              <>
-                <ShoppingBag size={16} />
-                <span>Add to Cart</span>
-              </>
-            )}
-          </motion.button>
+            <MessageCircle size={16} />
+            <span>Inquire</span>
+          </a>
         </div>
       </div>
     </motion.article>

@@ -134,7 +134,7 @@ export default function Footer({ onNavigate, onSelectCategory }) {
           <ul className="footer-contact-list">
             <li>
               <PhoneCall size={16} className="gold-icon" />
-              <span>+91 98765 43210 (Sample)</span>
+              <a href="tel:+917385127438">+91 73851 27438</a>
             </li>
             <li>
               <Mail size={16} className="gold-icon" />
@@ -145,7 +145,7 @@ export default function Footer({ onNavigate, onSelectCategory }) {
               <span>Traditional Leather Footwear Market, Maharashtra, India</span>
             </li>
           </ul>
-          <p className="footer-sizes-note">Available Sizes (India/UK): 6, 7, 8, 9, 10</p>
+          <p className="footer-sizes-note">परंपरेची आधुनिक पावलं • Style | Comfort | Durability</p>
         </div>
       </div>
 

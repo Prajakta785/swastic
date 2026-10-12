@@ -29,16 +29,16 @@ export default function WhyChooseUs() {
         'Warm chestnut browns, classic tans, and festive ivory-white finishes that elevate both traditional and casual outfits.'
     },
     {
-      icon: Ruler,
-      title: 'Standard Indian Sizes (6–10)',
+      icon: ShieldCheck,
+      title: 'Strong Toe Grip & Durable Stitching',
       description:
-        'Available across popular adult sizes 6, 7, 8, 9, and 10 with clear size selection on every product card.'
+        'Built to last with fine craftsmanship in every stitch and an embossed toe loop for confident, comfortable walking.'
     },
     {
       icon: MessageCircle,
-      title: 'Easy WhatsApp Ordering',
+      title: 'Direct WhatsApp Inquiry',
       description:
-        'Add your favorite pairs to the cart and place your order or size inquiry directly over WhatsApp in seconds.'
+        'Connect with us directly on WhatsApp (+91 73851 27438) for quick product inquiries and orders.'
     }
   ];
 

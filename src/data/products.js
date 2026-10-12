@@ -3,6 +3,39 @@
 
 export const PRODUCTS = [
   {
+    id: 'swastic-premium-poster-00',
+    name: 'Premium Leather Sandals — परंपरेची आधुनिक पावलं',
+    subtitle: 'Handcrafted genuine leather Kolhapuri with red Gonda, strong toe grip & anti-slip sole',
+    category: 'Kolhapuri Classic',
+    price: 1399,
+    originalPrice: 1799,
+    isSamplePrice: true,
+    rating: 5.0,
+    reviewCount: 92,
+    badge: 'Flagship Edition',
+    featuredInHero: true,
+    image: '/images/premium-leather-sandals-poster.jpg',
+    gallery: [
+      '/images/premium-leather-sandals-poster.jpg',
+      '/images/real-dark-brown-red-gonda-chappal.jpg',
+      '/images/real-dark-brown-red-gonda-closeup.jpg'
+    ],
+    sizes: [6, 7, 8, 9, 10],
+    colors: [
+      { name: 'Rich Chestnut Espresso & Red Gonda', hex: '#4A1F12' }
+    ],
+    material: 'Premium Genuine Leather • Long Lasting Quality',
+    sole: 'Anti-Slip Sole with Durable Hand-Stitching',
+    description:
+      'Tradition in Every Step (परंपरेची आधुनिक पावलं) — crafted from premium genuine leather with traditional red Gonda detailing, a strong embossed toe grip for better comfort, durable border stitching, and an anti-slip sole.',
+    highlights: [
+      'Premium Genuine Leather for long-lasting quality',
+      'Lightweight & comfortable footbed for all-day ease',
+      'Strong embossed toe grip & traditional red Gonda flower detail',
+      'Durable perimeter stitching & anti-slip sole for better grip'
+    ]
+  },
+  {
     id: 'swastic-real-brown-01',
     name: 'Traditional Brown Leather Chappal',
     subtitle: 'Hand-embossed chestnut leather with golden sunburst medallion & dual Veni cords',
@@ -303,66 +336,66 @@ export const PRODUCTS = [
 
 export const REAL_WORKSHOP_GALLERY = [
   {
+    id: 'gallery-0',
+    image: '/images/premium-leather-sandals-poster.jpg',
+    title: 'Premium Leather Sandals — परंपरेची आधुनिक पावलं',
+    tag: 'Flagship Edition',
+    productIndex: 0
+  },
+  {
     id: 'gallery-1',
     image: '/images/real-brown-golden-medallion-chappal.jpg',
     title: 'Chestnut Brown Golden-Medallion Kapshi',
     tag: 'Brown Leather',
-    productIndex: 0
+    productIndex: 1
   },
   {
     id: 'gallery-2',
     image: '/images/real-white-braided-brown-closeup.jpg',
     title: 'White Footbed & Triple-Braided Espresso Strap',
     tag: 'White Traditional',
-    productIndex: 1
+    productIndex: 2
   },
   {
     id: 'gallery-3',
     image: '/images/real-white-zari-brocade-collection.jpg',
     title: 'Festive Paithani Zari Brocade & Golden Veni (4 Colors)',
     tag: 'Festive Zari',
-    productIndex: 2
+    productIndex: 3
   },
   {
     id: 'gallery-4',
     image: '/images/real-dark-brown-red-gonda-chappal.jpg',
     title: 'Dark Espresso Red-Gonda Kolhapuri Pair',
     tag: 'Kolhapuri Classic',
-    productIndex: 3
+    productIndex: 4
   },
   {
     id: 'gallery-5',
     image: '/images/real-dark-brown-single-veni-gold.jpg',
     title: 'Polished Dark Espresso Single-Veni Gold Emblem',
     tag: 'Brown Leather',
-    productIndex: 4
+    productIndex: 5
   },
   {
     id: 'gallery-6',
     image: '/images/real-brown-three-designs-medallion.jpg',
     title: '3-Design Golden Medallion Series (Wave, Ribbed & Cutwork)',
     tag: '3 Strap Designs',
-    productIndex: 5
+    productIndex: 6
   },
   {
     id: 'gallery-7',
     image: '/images/real-dark-brown-red-gonda-closeup.jpg',
     title: 'Close-Up Craft: Chevron Embossing & Red Gonda',
     tag: 'Artisan Detail',
-    productIndex: 3
+    productIndex: 9
   },
   {
     id: 'gallery-8',
     image: '/images/real-white-black-strap-chappal.jpg',
     title: 'Ivory Footbed & Ribbed Jet-Black Strap',
     tag: 'Contrast Edition',
-    productIndex: 6
-  },
-  {
-    id: 'gallery-9',
-    image: '/images/real-white-braided-brown-full.jpg',
-    title: 'Dual-Tone White & Braided Brown Full Pair',
-    tag: 'Artisan Weave',
     productIndex: 7
   }
 ];
