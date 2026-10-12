@@ -56,11 +56,6 @@ export default function Footer({ onNavigate, onSelectCategory }) {
               </a>
             </li>
             <li>
-              <a href="#about" onClick={(e) => { e.preventDefault(); onNavigate('#about'); }}>
-                About Us
-              </a>
-            </li>
-            <li>
               <a href="#contact" onClick={(e) => { e.preventDefault(); onNavigate('#contact'); }}>
                 Contact Us
               </a>

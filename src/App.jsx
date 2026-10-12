@@ -8,7 +8,6 @@ import Hero from './components/Hero';
 import ProductGrid from './components/ProductGrid';
 import ProductModal from './components/ProductModal';
 import TraditionalCollection from './components/TraditionalCollection';
-import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -117,7 +116,6 @@ export default function App() {
                 products={products}
                 onQuickView={(prod) => setQuickViewProductId(prod.id)}
               />
-              <About onNavigate={handleNavigate} />
               <Contact />
             </>
           )}
@@ -142,8 +140,6 @@ export default function App() {
               onQuickView={(prod) => setQuickViewProductId(prod.id)}
             />
           )}
-
-          {activePage === '#about' && <About onNavigate={handleNavigate} />}
 
           {activePage === '#contact' && <Contact />}
         </main>

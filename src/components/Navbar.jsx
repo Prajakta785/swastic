@@ -58,7 +58,6 @@ export default function Navbar({
     { label: 'Shop', href: '#shop' },
     { label: 'Collection', href: '#collection' },
     { label: 'Categories', href: '#categories', isDropdown: true },
-    { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' }
   ];
 
