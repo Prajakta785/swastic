@@ -155,17 +155,17 @@ export default function App() {
           onClose={() => setQuickViewProductId(null)}
         />
 
-        {/* Floating Quick WhatsApp Button */}
+        {/* Floating Animated WhatsApp Icon Button (Icon Only) */}
         <a
           href="https://wa.me/917385127438?text=Namaste%20Swastik%20Footwear!%20I%20would%20like%20to%20enquire%20about%20your%20handcrafted%20traditional%20chappals."
           target="_blank"
           rel="noopener noreferrer"
           className="floating-whatsapp-btn"
-          aria-label="Enquire on WhatsApp +91 73851 27438"
-          title="WhatsApp +91 73851 27438"
+          aria-label="Enquire on WhatsApp"
+          title="Chat on WhatsApp"
         >
-          <WhatsAppIcon size={22} />
-          <span>WhatsApp: 73851 27438</span>
+          <span className="whatsapp-pulse-ring" aria-hidden="true" />
+          <WhatsAppIcon size={28} />
         </a>
       </div>
     </>

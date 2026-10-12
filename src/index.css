@@ -3512,16 +3512,53 @@ section[id] {
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 150;
-  background: var(--whatsapp-green);
-  color: #fff;
-  padding: 0.75rem 1.2rem;
-  border-radius: 99px;
-  box-shadow: 0 12px 28px rgba(31, 139, 76, 0.4);
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-  font-size: 0.88rem;
+  justify-content: center;
+  animation: whatsappFloat 2.8s ease-in-out infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.65);
+}
+
+.whatsapp-pulse-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+  opacity: 0;
+  pointer-events: none;
+  animation: whatsappPulseRing 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes whatsappFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes whatsappPulseRing {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
 }
 
 /* =========================================
