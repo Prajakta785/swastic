@@ -3372,6 +3372,100 @@ section[id] {
   gap: 1rem;
 }
 
+.footer-copyright {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.footer-copyright strong {
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+/* Professional Animated "Made with ❤️ by MK Enterprises" Credit Badge */
+.mk-credit-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0.42rem 1.05rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 155, 53, 0.38);
+  box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mk-credit-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 224, 138, 0.8);
+  box-shadow: 0 10px 26px -6px rgba(212, 155, 53, 0.32);
+}
+
+.mk-credit-text {
+  color: #e2e8f0;
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+.mk-heart-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mk-beating-heart {
+  color: #ff3b5c;
+  filter: drop-shadow(0 0 6px rgba(255, 59, 92, 0.65));
+  animation: mkHeartBeat 1.35s infinite ease-in-out;
+  transform-origin: center;
+}
+
+.mk-brand-shimmer {
+  font-family: 'Cinzel', var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  background: linear-gradient(
+    90deg,
+    #ffe494 0%,
+    #d49b35 30%,
+    #ffffff 50%,
+    #d49b35 70%,
+    #ffe494 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: mkGoldShimmer 3.5s linear infinite;
+}
+
+@keyframes mkHeartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.26);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.18);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes mkGoldShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 220% center;
+  }
+}
+
 .scroll-top-btn {
   display: inline-flex;
   align-items: center;

@@ -139,11 +139,19 @@ export default function Footer({ onNavigate, onSelectCategory }) {
 
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
-          <p>
-            © {new Date().getFullYear()} <strong>SWASTIK FOOTWEAR</strong>. Crafted with{' '}
-            <Heart size={13} fill="#D49B35" stroke="#D49B35" style={{ verticalAlign: 'middle' }} />{' '}
-            for Indian Traditional Footwear Lovers.
+          <p className="footer-copyright">
+            © {new Date().getFullYear()} <strong>SWASTIK FOOTWEAR</strong>. All Rights Reserved.
           </p>
+
+          <div className="mk-credit-pill" aria-label="Made with love by MK Enterprises">
+            <span className="mk-credit-text">Made with</span>
+            <span className="mk-heart-wrap" aria-hidden="true">
+              <Heart size={15} className="mk-beating-heart" fill="#ff3b5c" stroke="#ff3b5c" />
+            </span>
+            <span className="mk-credit-text">by</span>
+            <strong className="mk-brand-shimmer">MK Enterprises</strong>
+          </div>
+
           <button
             type="button"
             className="scroll-top-btn"
