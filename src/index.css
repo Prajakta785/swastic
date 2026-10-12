@@ -885,18 +885,18 @@ section[id] {
   align-items: center;
 }
 
-/* Royal Golden Swastik Crest & SWASTIK FOOTWEAR Header in Hero */
+/* Royal Golden Swastik Crest & SWASTIK FOOTWEAR Header in Hero (No Box) */
 .hero-royal-brand-lockup {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: linear-gradient(155deg, #24130C 0%, #381E12 52%, #1D0F09 100%);
-  border: 1.5px solid rgba(212, 155, 53, 0.45);
-  border-radius: 24px;
-  padding: 1.35rem 1.5rem 1.25rem;
-  margin-bottom: 1.15rem;
-  box-shadow: 0 18px 40px -12px rgba(29, 15, 9, 0.38);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0.25rem 0 0.75rem;
+  margin-bottom: 0.9rem;
+  box-shadow: none;
   max-width: 540px;
 }
 
@@ -912,19 +912,18 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 6px 14px rgba(31, 17, 11, 0.25));
 }
 
 .hero-swastik-title {
   font-family: 'Cinzel', var(--font-serif);
-  font-size: clamp(2.35rem, 4.2vw, 3.35rem);
+  font-size: clamp(2.5rem, 4.5vw, 3.6rem);
   font-weight: 800;
   letter-spacing: 0.14em;
   line-height: 1.02;
-  background: linear-gradient(180deg, #FFE89E 0%, #D89F38 52%, #9E6814 100%);
+  background: linear-gradient(180deg, #9A6512 0%, #D49B35 48%, #6E4208 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
   margin: 0;
 }
 
@@ -941,22 +940,22 @@ section[id] {
 .footwear-rule {
   flex: 1;
   height: 1.5px;
-  background: linear-gradient(90deg, transparent, #D89F38, transparent);
+  background: linear-gradient(90deg, transparent, #B67D1E, transparent);
 }
 
 .footwear-subword {
   font-family: 'Cinzel', var(--font-serif);
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 800;
   letter-spacing: 0.34em;
-  color: #E7B95C;
+  color: #8C5810;
 }
 
 .hero-handcrafted-lead {
   font-family: var(--font-serif);
-  font-size: 1.28rem;
-  font-weight: 600;
-  color: #F3D289;
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: var(--brown-900);
   letter-spacing: 0.03em;
   line-height: 1.15;
   margin: 0;
@@ -964,25 +963,24 @@ section[id] {
 
 .hero-kolhapuri-script {
   font-family: 'Great Vibes', var(--font-serif);
-  font-size: clamp(2.1rem, 3.5vw, 2.75rem);
+  font-size: clamp(2.25rem, 3.7vw, 2.95rem);
   font-weight: 400;
-  color: #FFE494;
+  color: #B07214;
   line-height: 1.12;
   margin: 0.05rem 0 0.65rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .hero-mwr-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.34rem 1.15rem;
+  padding: 0.36rem 1.2rem;
   border-radius: 999px;
-  border: 1px solid rgba(216, 159, 56, 0.65);
-  background: rgba(15, 8, 4, 0.45);
-  color: #F5D996;
-  font-size: 0.72rem;
-  font-weight: 700;
+  border: 1.5px solid #C88D28;
+  background: rgba(212, 155, 53, 0.12);
+  color: #5C3608;
+  font-size: 0.73rem;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
