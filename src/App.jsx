@@ -243,7 +243,27 @@ export default function App() {
                 onQuickView={(prod) => setQuickViewProductId(prod.id)}
                 onAddToCart={handleAddToCart}
               />
+              <ProductGrid
+                products={filteredProducts}
+                categories={CATEGORIES}
+                selectedCategory={selectedCategory}
+                onSelectCategory={setSelectedCategory}
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+                sortBy={sortBy}
+                onSortChange={setSortBy}
+                onAddToCart={handleAddToCart}
+                onQuickView={(prod) => setQuickViewProductId(prod.id)}
+              />
+              <TraditionalCollection
+                products={products}
+                onQuickView={(prod) => setQuickViewProductId(prod.id)}
+                onAddToCart={handleAddToCart}
+              />
+              <About onNavigate={handleNavigate} />
               <WhyChooseUs />
+              <Reviews />
+              <Contact />
             </>
           )}
 
