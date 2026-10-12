@@ -13,29 +13,11 @@ export default function Footer({ onNavigate, onSelectCategory }) {
         <div className="footer-brand-col">
           <div className="brand-logo footer-logo">
             <div className="brand-emblem swastik-royal-emblem">
-              <svg viewBox="0 0 64 64" width="44" height="44" fill="none">
-                <defs>
-                  <linearGradient id="footerSwastikGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#FFE08A" />
-                    <stop offset="50%" stopColor="#D49B35" />
-                    <stop offset="100%" stopColor="#9A6818" />
-                  </linearGradient>
-                </defs>
-                <circle cx="32" cy="32" r="28" fill="#1F110B" stroke="url(#footerSwastikGold)" strokeWidth="2.4" />
-                <circle cx="32" cy="32" r="24" stroke="url(#footerSwastikGold)" strokeWidth="0.9" strokeDasharray="3 2" />
-                <g stroke="url(#footerSwastikGold)" strokeWidth="3.8" strokeLinecap="square" strokeLinejoin="miter">
-                  <path d="M32 16 V48" />
-                  <path d="M32 16 H45" />
-                  <path d="M19 48 H32" />
-                  <path d="M16 32 H48" />
-                  <path d="M48 32 V45" />
-                  <path d="M16 19 V32" />
-                </g>
-                <circle cx="24.5" cy="24.5" r="2" fill="url(#footerSwastikGold)" />
-                <circle cx="39.5" cy="24.5" r="2" fill="url(#footerSwastikGold)" />
-                <circle cx="24.5" cy="39.5" r="2" fill="url(#footerSwastikGold)" />
-                <circle cx="39.5" cy="39.5" r="2" fill="url(#footerSwastikGold)" />
-              </svg>
+              <img
+                src="/images/swastik-logo.png"
+                alt="Swastik Footwear Logo"
+                className="swastik-logo-img"
+              />
             </div>
             <div className="brand-text">
               <span className="brand-title">SWASTIK</span>

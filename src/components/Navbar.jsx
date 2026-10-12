@@ -143,34 +143,11 @@ export default function Navbar({
           aria-label="Swastik Footwear Home"
         >
           <div className="brand-emblem swastik-royal-emblem">
-            <svg viewBox="0 0 64 64" width="46" height="46" fill="none">
-              <defs>
-                <linearGradient id="swastikGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#FFE08A" />
-                  <stop offset="45%" stopColor="#D49B35" />
-                  <stop offset="100%" stopColor="#9A6818" />
-                </linearGradient>
-              </defs>
-              {/* Dark Rich Brown Medallion Base */}
-              <circle cx="32" cy="32" r="28" fill="#1F110B" stroke="url(#swastikGoldGrad)" strokeWidth="2.4" />
-              <circle cx="32" cy="32" r="24" stroke="url(#swastikGoldGrad)" strokeWidth="0.9" strokeDasharray="3 2" />
-              {/* Auspicious Right-Facing Golden Swastik Symbol */}
-              <g stroke="url(#swastikGoldGrad)" strokeWidth="3.8" strokeLinecap="square" strokeLinejoin="miter">
-                {/* Vertical bar + top-right arm + bottom-left arm */}
-                <path d="M32 16 V48" />
-                <path d="M32 16 H45" />
-                <path d="M19 48 H32" />
-                {/* Horizontal bar + bottom-right arm + top-left arm */}
-                <path d="M16 32 H48" />
-                <path d="M48 32 V45" />
-                <path d="M16 19 V32" />
-              </g>
-              {/* Four Auspicious Golden Bindu Dots */}
-              <circle cx="24.5" cy="24.5" r="2" fill="url(#swastikGoldGrad)" />
-              <circle cx="39.5" cy="24.5" r="2" fill="url(#swastikGoldGrad)" />
-              <circle cx="24.5" cy="39.5" r="2" fill="url(#swastikGoldGrad)" />
-              <circle cx="39.5" cy="39.5" r="2" fill="url(#swastikGoldGrad)" />
-            </svg>
+            <img
+              src="/images/swastik-logo.png"
+              alt="Swastik Footwear Logo"
+              className="swastik-logo-img"
+            />
           </div>
           <div className="brand-text">
             <span className="brand-title">SWASTIK</span>

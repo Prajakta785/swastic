@@ -80,29 +80,11 @@ export default function Hero({ products, onNavigate, onQuickView, onAddToCart })
               </svg>
 
               <div className="hero-swastik-medallion">
-                <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
-                  <defs>
-                    <linearGradient id="heroSwastikGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FFE494" />
-                      <stop offset="50%" stopColor="#D49B35" />
-                      <stop offset="100%" stopColor="#946115" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="32" cy="32" r="29" fill="#1F110B" stroke="url(#heroSwastikGold)" strokeWidth="2.5" />
-                  <circle cx="32" cy="32" r="25" stroke="url(#heroSwastikGold)" strokeWidth="0.9" strokeDasharray="3 2" />
-                  <g stroke="url(#heroSwastikGold)" strokeWidth="4" strokeLinecap="square" strokeLinejoin="miter">
-                    <path d="M32 15 V49" />
-                    <path d="M32 15 H46" />
-                    <path d="M18 49 H32" />
-                    <path d="M15 32 H49" />
-                    <path d="M49 32 V46" />
-                    <path d="M15 18 V32" />
-                  </g>
-                  <circle cx="24" cy="24" r="2.1" fill="url(#heroSwastikGold)" />
-                  <circle cx="40" cy="24" r="2.1" fill="url(#heroSwastikGold)" />
-                  <circle cx="24" cy="40" r="2.1" fill="url(#heroSwastikGold)" />
-                  <circle cx="40" cy="40" r="2.1" fill="url(#heroSwastikGold)" />
-                </svg>
+                <img
+                  src="/images/swastik-logo.png"
+                  alt="Swastik Footwear Logo"
+                  className="swastik-logo-img hero-swastik-logo-img"
+                />
               </div>
 
               <svg className="swastik-flourish swastik-flourish-right" viewBox="0 0 80 28" width="68" height="24" fill="none">

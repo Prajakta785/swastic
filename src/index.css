@@ -477,6 +477,22 @@ section[id] {
   filter: drop-shadow(0 4px 10px rgba(31, 17, 11, 0.25));
 }
 
+.swastik-logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #D49B35;
+  box-shadow: 0 4px 12px rgba(31, 17, 11, 0.35);
+  display: block;
+}
+
+.hero-swastik-logo-img {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #E5B454;
+}
+
 .brand-logo:hover .brand-emblem {
   transform: rotate(8deg) scale(1.05);
 }
