@@ -62,7 +62,7 @@ export default function Navbar({
   ];
 
   const marqueeItems = [
-    '✨ PREMIUM GENUINE LEATHER SANDALS • परंपरेची आधुनिक पावलं',
+    '✨ PREMIUM GENUINE LEATHER CHAPPALS • परंपरेची आधुनिक पावलं',
     '🩴 LIGHTWEIGHT & COMFORTABLE FOOTBED FOR ALL DAY EASE',
     '🔨 DURABLE STITCHING & FINE CRAFTSMANSHIP IN EVERY STITCH',
     '🛡️ ANTI-SLIP SOLE FOR BETTER GRIP & SAFETY',

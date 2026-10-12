@@ -186,8 +186,8 @@ export default function Contact() {
                     value={formData.interest}
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
                   >
-                    <option value="Premium Leather Sandals (Red Gonda)">
-                      Premium Leather Sandals (Red Gonda)
+                    <option value="Premium Leather Chappal (Red Gonda)">
+                      Premium Leather Chappal (Red Gonda)
                     </option>
                     <option value="Traditional Brown Leather Chappal">
                       Traditional Brown Leather Chappal

@@ -49,7 +49,7 @@ export default function TraditionalCollection({ products, onQuickView }) {
               </div>
               <h3>{brownProduct.name}</h3>
               <p>
-                Handcrafted genuine leather Kolhapuri sandals featuring traditional red Gonda
+                Handcrafted genuine leather Kolhapuri chappals featuring traditional red Gonda
                 detailing, strong embossed toe grip for better comfort, and an anti-slip sole.
               </p>
               <ul className="editorial-points">
