@@ -95,8 +95,14 @@ export default function Navbar({
         <div className="container top-promo-inner">
           <div className="top-promo-left">
             <span className="limited-drop-pill">
-              <Zap size={12} fill="currentColor" />
-              SWASTIK FOOTWEAR
+              <img
+                src="/images/swastik-logo.png"
+                alt=""
+                className="top-pill-swastik-icon"
+                aria-hidden="true"
+              />
+              <span className="top-pill-brand-text">SWASTIK FOOTWEAR</span>
+              <span className="top-pill-live-dot" aria-hidden="true" />
             </span>
             <p className="promo-code-text">
               Premium Handcrafted Kolhapuri Chappals • <strong>MANUFACTURER | WHOLESALE | RETAIL</strong>
