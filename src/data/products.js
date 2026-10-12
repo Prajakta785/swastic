@@ -295,6 +295,72 @@ export const PRODUCTS = [
       'Dual hand-braided leather cords with traditional bottom knots',
       'Embossed toe-ring and double-stamped footbed perimeter'
     ]
+  },
+  {
+    id: 'swastic-real-ribbed-trio-10',
+    name: 'Classic Ribbed-Strap Trio — Black, Brown & Ivory White',
+    subtitle: 'Natural cream embossed leather footbed with 3 classic ribbed strap color options',
+    category: 'White Traditional',
+    price: 1299,
+    originalPrice: 1699,
+    isSamplePrice: true,
+    rating: 5.0,
+    reviewCount: 74,
+    badge: '3 Color Options',
+    featuredInHero: true,
+    image: '/images/poster-ribbed-color-trio.jpg',
+    gallery: [
+      '/images/poster-ribbed-color-trio.jpg',
+      '/images/real-ribbed-color-trio.jpg'
+    ],
+    sizes: [6, 7, 8, 9, 10],
+    colors: [
+      { name: 'Jet Black Ribbed Strap', hex: '#1B1B1B' },
+      { name: 'Rich Espresso Brown Strap', hex: '#4A2515' },
+      { name: 'Pure Ivory White Strap', hex: '#F3EFE6' }
+    ],
+    material: 'Multi-Ribbed Hand-Stitched Leather Straps on Natural Cream Footbed',
+    sole: 'Anti-Slip Traditional Stamped Leather Sole',
+    description:
+      'Available in three timeless strap colors—Jet Black, Rich Espresso Brown, and Pure Ivory White—all crafted on a soft natural cream-white footbed with double-row heritage border stamping and a strong double-stitched toe loop.',
+    highlights: [
+      '3 classic color options: Jet Black, Espresso Brown & Ivory White',
+      'Five-line ribbed upper band with pointed heritage top tab',
+      'Strong double-stitched toe grip for all-day walking comfort',
+      'Durable stamped border footbed with anti-slip sole'
+    ]
+  },
+  {
+    id: 'swastic-real-espresso-ribbed-11',
+    name: 'Ivory Footbed & Dark Espresso Ribbed-Strap Chappal',
+    subtitle: 'Handcrafted ivory-white stamped footbed with dark espresso multi-ribbed band & pointed tab',
+    category: 'White Traditional',
+    price: 1249,
+    originalPrice: 1599,
+    isSamplePrice: true,
+    rating: 4.9,
+    reviewCount: 53,
+    badge: 'Heritage Ribbed',
+    featuredInHero: true,
+    image: '/images/poster-white-espresso-ribbed.jpg',
+    gallery: [
+      '/images/poster-white-espresso-ribbed.jpg',
+      '/images/real-white-espresso-ribbed.jpg'
+    ],
+    sizes: [6, 7, 8, 9, 10],
+    colors: [
+      { name: 'Ivory Footbed & Dark Espresso Strap', hex: '#2A1B15' }
+    ],
+    material: 'Premium Genuine Leather • Multi-Ribbed Stitched Upper',
+    sole: 'Hand-Crafted Anti-Slip Leather Sole',
+    description:
+      'Crafted for everyday elegance and traditional comfort, this design pairs a pristine ivory-white stamped leather footbed with a deeply ribbed dark espresso upper band, pointed central crown tab, and reinforced toe grip.',
+    highlights: [
+      'Multi-ribbed stitched upper strap with pointed traditional top tab',
+      'Pristine ivory-white leather footbed with intricate border stamping',
+      'Reinforced double-stitched toe loop for superior grip',
+      'Lightweight, durable build ideal for daily & festive ethnic wear'
+    ]
   }
 ];
 
@@ -361,6 +427,20 @@ export const REAL_WORKSHOP_GALLERY = [
     title: 'Chevron Embossed & Red Gonda Artisan Pair',
     tag: 'Artisan Detail',
     productIndex: 8
+  },
+  {
+    id: 'gallery-10',
+    image: '/images/poster-ribbed-color-trio.jpg',
+    title: 'Classic Ribbed-Strap Trio (Black, Brown & White)',
+    tag: '3 Color Options',
+    productIndex: 9
+  },
+  {
+    id: 'gallery-11',
+    image: '/images/poster-white-espresso-ribbed.jpg',
+    title: 'Ivory Footbed & Dark Espresso Ribbed Strap',
+    tag: 'Heritage Ribbed',
+    productIndex: 10
   }
 ];
 

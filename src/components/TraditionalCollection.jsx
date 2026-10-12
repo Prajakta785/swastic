@@ -160,7 +160,7 @@ export default function TraditionalCollection({ products, onQuickView }) {
           <div className="lookbook-header">
             <div className="lookbook-title-group">
               <Camera size={18} className="gold-icon" />
-              <h3>Authentic Workshop Lookbook — All 9 Real Handcrafted Photos</h3>
+              <h3>Authentic Workshop Lookbook — All {REAL_WORKSHOP_GALLERY.length} Real Handcrafted Designs</h3>
             </div>
             <span>Click any photo to view details &amp; order</span>
           </div>
