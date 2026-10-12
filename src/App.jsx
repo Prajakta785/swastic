@@ -9,8 +9,6 @@ import ProductGrid from './components/ProductGrid';
 import ProductModal from './components/ProductModal';
 import TraditionalCollection from './components/TraditionalCollection';
 import About from './components/About';
-import WhyChooseUs from './components/WhyChooseUs';
-import Reviews from './components/Reviews';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -67,8 +65,7 @@ export default function App() {
 
   // Switch directly to the target page at top of screen (no page scroll animation)
   const handleNavigate = (selector) => {
-    const normalized = selector === '#why-choose-us' ? '#about' : selector;
-    setActivePage(normalized);
+    setActivePage(selector);
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
@@ -121,8 +118,6 @@ export default function App() {
                 onQuickView={(prod) => setQuickViewProductId(prod.id)}
               />
               <About onNavigate={handleNavigate} />
-              <WhyChooseUs />
-              <Reviews />
               <Contact />
             </>
           )}
@@ -148,14 +143,7 @@ export default function App() {
             />
           )}
 
-          {activePage === '#about' && (
-            <>
-              <About onNavigate={handleNavigate} />
-              <WhyChooseUs />
-            </>
-          )}
-
-          {activePage === '#reviews' && <Reviews />}
+          {activePage === '#about' && <About onNavigate={handleNavigate} />}
 
           {activePage === '#contact' && <Contact />}
         </main>

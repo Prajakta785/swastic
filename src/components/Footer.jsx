@@ -61,13 +61,8 @@ export default function Footer({ onNavigate, onSelectCategory }) {
               </a>
             </li>
             <li>
-              <a href="#why-choose-us" onClick={(e) => { e.preventDefault(); onNavigate('#why-choose-us'); }}>
-                Why Choose Us
-              </a>
-            </li>
-            <li>
-              <a href="#reviews" onClick={(e) => { e.preventDefault(); onNavigate('#reviews'); }}>
-                Customer Reviews
+              <a href="#contact" onClick={(e) => { e.preventDefault(); onNavigate('#contact'); }}>
+                Contact Us
               </a>
             </li>
           </ul>
