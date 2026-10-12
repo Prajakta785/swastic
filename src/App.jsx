@@ -55,6 +55,9 @@ export default function App() {
   const [cartBounceKey, setCartBounceKey] = useState(0);
   const [toastMessage, setToastMessage] = useState(null);
 
+  // Active page state for direct page switching (no scrolling through long page)
+  const [activePage, setActivePage] = useState('#home');
+
   // Filter & Search state
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -172,11 +175,11 @@ export default function App() {
     setCartItems([]);
   };
 
+  // Switch directly to the target page at top of screen (no page scroll animation)
   const handleNavigate = (selector) => {
-    const target = document.querySelector(selector);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    const normalized = selector === '#why-choose-us' ? '#about' : selector;
+    setActivePage(normalized);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
   const handleUpdateProductImage = (productId, dataUrl) => {
@@ -211,7 +214,14 @@ export default function App() {
           cartCount={totalCartCount}
           onOpenCart={() => setIsCartOpen(true)}
           searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
+          onSearchChange={(val) => {
+            setSearchQuery(val);
+            if (val.trim() && activePage !== '#shop' && activePage !== '#categories') {
+              setActivePage('#shop');
+              window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+            }
+          }}
+          activePage={activePage}
           onNavigate={handleNavigate}
           cartBounceKey={cartBounceKey}
           onOpenPhotoManager={() => setPhotoManagerOpen(true)}
@@ -225,39 +235,51 @@ export default function App() {
         />
 
         <main>
-          <Hero
-            products={products}
-            onNavigate={handleNavigate}
-            onQuickView={(prod) => setQuickViewProductId(prod.id)}
-            onAddToCart={handleAddToCart}
-          />
+          {activePage === '#home' && (
+            <>
+              <Hero
+                products={products}
+                onNavigate={handleNavigate}
+                onQuickView={(prod) => setQuickViewProductId(prod.id)}
+                onAddToCart={handleAddToCart}
+              />
+              <WhyChooseUs />
+            </>
+          )}
 
-          <ProductGrid
-            products={filteredProducts}
-            categories={CATEGORIES}
-            selectedCategory={selectedCategory}
-            onSelectCategory={setSelectedCategory}
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-            sortBy={sortBy}
-            onSortChange={setSortBy}
-            onAddToCart={handleAddToCart}
-            onQuickView={(prod) => setQuickViewProductId(prod.id)}
-          />
+          {(activePage === '#shop' || activePage === '#categories') && (
+            <ProductGrid
+              products={filteredProducts}
+              categories={CATEGORIES}
+              selectedCategory={selectedCategory}
+              onSelectCategory={setSelectedCategory}
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              sortBy={sortBy}
+              onSortChange={setSortBy}
+              onAddToCart={handleAddToCart}
+              onQuickView={(prod) => setQuickViewProductId(prod.id)}
+            />
+          )}
 
-          <TraditionalCollection
-            products={products}
-            onQuickView={(prod) => setQuickViewProductId(prod.id)}
-            onAddToCart={handleAddToCart}
-          />
+          {activePage === '#collection' && (
+            <TraditionalCollection
+              products={products}
+              onQuickView={(prod) => setQuickViewProductId(prod.id)}
+              onAddToCart={handleAddToCart}
+            />
+          )}
 
-          <About onNavigate={handleNavigate} />
+          {activePage === '#about' && (
+            <>
+              <About onNavigate={handleNavigate} />
+              <WhyChooseUs />
+            </>
+          )}
 
-          <WhyChooseUs />
+          {activePage === '#reviews' && <Reviews />}
 
-          <Reviews />
-
-          <Contact />
+          {activePage === '#contact' && <Contact />}
         </main>
 
         <Footer

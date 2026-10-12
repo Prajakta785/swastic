@@ -19,6 +19,7 @@ export default function Navbar({
   onOpenCart,
   searchQuery,
   onSearchChange,
+  activePage = '#home',
   onNavigate,
   cartBounceKey,
   onOpenPhotoManager,
@@ -31,24 +32,12 @@ export default function Navbar({
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState('#home');
   const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 24);
-
-      // Update active nav item based on scroll position
-      const sectionIds = ['#home', '#shop', '#collection', '#about', '#reviews', '#contact'];
-      const scrollPos = window.scrollY + 220;
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.querySelector(sectionIds[i]);
-        if (el && el.offsetTop <= scrollPos) {
-          setActiveHref(sectionIds[i]);
-          break;
-        }
-      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -89,7 +78,6 @@ export default function Navbar({
     if (href === '#shop' && onSelectCategory) {
       onSelectCategory('All');
     }
-    setActiveHref(href);
     onNavigate(href);
   };
 
@@ -99,8 +87,7 @@ export default function Navbar({
     }
     setCategoriesDropdownOpen(false);
     setMobileMenuOpen(false);
-    setActiveHref('#shop');
-    onNavigate('#shop');
+    onNavigate('#categories');
   };
 
   return (
@@ -197,7 +184,7 @@ export default function Navbar({
         <ul className="nav-links">
           {navLinks.map((link) => {
             if (link.isDropdown) {
-              const isDropdownActive = categoriesDropdownOpen || selectedCategory !== 'All';
+              const isDropdownActive = activePage === '#categories';
               return (
                 <li
                   key={link.label}
@@ -211,7 +198,10 @@ export default function Navbar({
                     className={`nav-link nav-dropdown-trigger ${
                       isDropdownActive ? 'active' : ''
                     }`}
-                    onClick={() => setCategoriesDropdownOpen((prev) => !prev)}
+                    onClick={() => {
+                      setCategoriesDropdownOpen((prev) => !prev);
+                      onNavigate('#categories');
+                    }}
                     aria-expanded={categoriesDropdownOpen}
                   >
                     <span>{link.label}</span>
@@ -252,7 +242,7 @@ export default function Navbar({
               );
             }
 
-            const isActive = activeHref === link.href;
+            const isActive = activePage === link.href;
             return (
               <li key={link.href}>
                 <a
@@ -298,13 +288,7 @@ export default function Navbar({
                   type="text"
                   placeholder="Search chappals..."
                   value={searchQuery}
-                  onChange={(e) => {
-                    onSearchChange(e.target.value);
-                    const shopEl = document.querySelector('#shop');
-                    if (shopEl && window.scrollY < 300) {
-                      shopEl.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                  onChange={(e) => onSearchChange(e.target.value)}
                   className="nav-search-input"
                 />
               )}
@@ -379,9 +363,9 @@ export default function Navbar({
                 {navLinks.map((link) => (
                   <li key={link.label}>
                     <a
-                      href={link.isDropdown ? '#shop' : link.href}
-                      onClick={(e) => handleLinkClick(e, link.isDropdown ? '#shop' : link.href)}
-                      className={`mobile-nav-link ${activeHref === link.href ? 'active' : ''}`}
+                      href={link.href}
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                      className={`mobile-nav-link ${activePage === link.href ? 'active' : ''}`}
                     >
                       {link.label}
                     </a>
