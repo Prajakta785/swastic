@@ -150,54 +150,57 @@ section[id] {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: radial-gradient(circle at center, #111827 0%, #090d16 100%);
+  background: radial-gradient(circle at center, #fffdf9 0%, #fff7ed 60%, #f5ebdc 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: var(--brown-900);
 }
 
 .loader-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.15rem;
   text-align: center;
   padding: 2rem;
 }
 
-.loader-brand {
+.loader-swastik-lockup {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  align-items: center;
+  text-align: center;
 }
 
-.loader-title {
-  font-family: var(--font-serif);
-  font-size: 1.85rem;
-  font-weight: 700;
+.loader-swastik-title {
+  font-family: 'Cinzel', var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 800;
   letter-spacing: 0.14em;
-  color: #ffffff;
+  line-height: 1.04;
+  background: linear-gradient(180deg, #9A6512 0%, #D49B35 48%, #6E4208 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.15rem;
 }
 
-.loader-tagline {
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #f95700;
+.loader-footwear-divider {
+  min-width: 280px;
+  margin: 0.25rem 0 0;
 }
 
 .loader-bar-track {
-  width: 200px;
+  width: 220px;
   height: 3px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(182, 125, 30, 0.2);
   border-radius: 99px;
   overflow: hidden;
 }
 
 .loader-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #f95700, #ff8533);
+  background: linear-gradient(90deg, #9A6512, #D49B35, #9A6512);
   border-radius: 99px;
 }
 

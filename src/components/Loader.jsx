@@ -10,53 +10,41 @@ export default function Loader() {
     >
       <div className="loader-inner">
         <motion.div
-          className="loader-emblem"
-          initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
-          animate={{ scale: 1, opacity: 1, rotate: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="loader-swastik-lockup"
+          initial={{ scale: 0.9, opacity: 0, y: 12 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
         >
-          <svg
-            viewBox="0 0 64 64"
-            width="56"
-            height="56"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="32"
-              cy="32"
-              r="29"
-              stroke="url(#goldGrad)"
-              strokeWidth="2"
-              strokeDasharray="4 3"
-            />
-            <circle cx="32" cy="32" r="23" stroke="url(#goldGrad)" strokeWidth="1.5" />
-            {/* Artisanal Lotus & Heritage Diamond Motif */}
-            <path
-              d="M32 13L38 25L51 32L38 39L32 51L26 39L13 32L26 25L32 13Z"
-              stroke="url(#goldGrad)"
-              strokeWidth="2"
-              fill="rgba(200, 146, 54, 0.14)"
-            />
-            <circle cx="32" cy="32" r="4.5" fill="#DFAD55" />
-            <defs>
-              <linearGradient id="goldGrad" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#F3CA7A" />
-                <stop offset="0.5" stopColor="#C89236" />
-                <stop offset="1" stopColor="#9A681C" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </motion.div>
+          <div className="hero-swastik-crest-row">
+            <svg className="swastik-flourish swastik-flourish-left" viewBox="0 0 80 28" width="68" height="24" fill="none">
+              <path d="M78 22 C58 22, 46 8, 28 14 C16 18, 12 24, 4 22" stroke="#D49B35" strokeWidth="1.6" strokeLinecap="round" />
+              <path d="M64 16 C52 10, 42 18, 36 22" stroke="#D49B35" strokeWidth="1.2" strokeLinecap="round" />
+              <circle cx="4" cy="22" r="2.2" fill="#D49B35" />
+              <circle cx="48" cy="14" r="1.8" fill="#FFE08A" />
+            </svg>
 
-        <motion.div
-          className="loader-brand"
-          initial={{ y: 16, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
-          <span className="loader-title">SWASTIC FOOTWEAR</span>
-          <span className="loader-tagline">Tradition in Every Step</span>
+            <div className="hero-swastik-medallion">
+              <img
+                src="/images/swastik-logo.png"
+                alt="Swastik Footwear Logo"
+                className="swastik-logo-img hero-swastik-logo-img"
+              />
+            </div>
+
+            <svg className="swastik-flourish swastik-flourish-right" viewBox="0 0 80 28" width="68" height="24" fill="none">
+              <path d="M2 22 C22 22, 34 8, 52 14 C64 18, 68 24, 76 22" stroke="#D49B35" strokeWidth="1.6" strokeLinecap="round" />
+              <path d="M16 16 C28 10, 38 18, 44 22" stroke="#D49B35" strokeWidth="1.2" strokeLinecap="round" />
+              <circle cx="76" cy="22" r="2.2" fill="#D49B35" />
+              <circle cx="32" cy="14" r="1.8" fill="#FFE08A" />
+            </svg>
+          </div>
+
+          <span className="loader-swastik-title">SWASTIK</span>
+          <div className="hero-footwear-divider loader-footwear-divider">
+            <span className="footwear-rule" />
+            <span className="footwear-subword">FOOTWEAR</span>
+            <span className="footwear-rule" />
+          </div>
         </motion.div>
 
         <div className="loader-bar-track">
