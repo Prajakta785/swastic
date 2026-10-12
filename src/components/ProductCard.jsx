@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Eye, Feather, MessageCircle } from 'lucide-react';
+import { Star, Eye, Feather } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function ProductCard({ product, index, onQuickView }) {
   const whatsappUrl = `https://wa.me/917385127438?text=${encodeURIComponent(
-    `Namaste Swastic Footwear! I would like to inquire about: ${product.name}`
+    `Namaste Swastik Footwear! I would like to enquire about: ${product.name}`
   )}`;
 
   return (
@@ -15,7 +16,7 @@ export default function ProductCard({ product, index, onQuickView }) {
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
     >
-      {/* Signature "rt design" Showcase Stage for All Product Images (Full 4:3 Sizing) */}
+      {/* Signature "rt design" Showcase Stage for All Product Images */}
       <div className="product-image-wrap rt-stage-wrap" onClick={() => onQuickView(product)}>
         <span className="rt-dark-pill">{product.badge || 'NEW RELEASE'}</span>
 
@@ -62,7 +63,7 @@ export default function ProductCard({ product, index, onQuickView }) {
         </h3>
         <p className="product-subtitle">{product.subtitle}</p>
 
-        {/* Action Buttons: View Details & Direct WhatsApp Inquiry */}
+        {/* Action Buttons: View Details & Direct WhatsApp Enquiry */}
         <div className="product-actions">
           <button
             type="button"
@@ -79,8 +80,8 @@ export default function ProductCard({ product, index, onQuickView }) {
             rel="noopener noreferrer"
             className="btn btn-add-cart"
           >
-            <MessageCircle size={16} />
-            <span>Inquire</span>
+            <WhatsAppIcon size={17} />
+            <span>Enquiry</span>
           </a>
         </div>
       </div>

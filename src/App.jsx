@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
 import { PRODUCTS, CATEGORIES } from './data/products';
 import Loader from './components/Loader';
 import Navbar from './components/Navbar';
@@ -10,6 +9,7 @@ import ProductModal from './components/ProductModal';
 import TraditionalCollection from './components/TraditionalCollection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsAppIcon from './components/WhatsAppIcon';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -157,14 +157,14 @@ export default function App() {
 
         {/* Floating Quick WhatsApp Button */}
         <a
-          href="https://wa.me/917385127438?text=Namaste%20Swastic%20Footwear!%20I%20would%20like%20to%20inquire%20about%20your%20handcrafted%20traditional%20chappals."
+          href="https://wa.me/917385127438?text=Namaste%20Swastik%20Footwear!%20I%20would%20like%20to%20enquire%20about%20your%20handcrafted%20traditional%20chappals."
           target="_blank"
           rel="noopener noreferrer"
           className="floating-whatsapp-btn"
-          aria-label="Inquire on WhatsApp +91 73851 27438"
+          aria-label="Enquire on WhatsApp +91 73851 27438"
           title="WhatsApp +91 73851 27438"
         >
-          <MessageCircle size={22} />
+          <WhatsAppIcon size={22} />
           <span>WhatsApp: 73851 27438</span>
         </a>
       </div>

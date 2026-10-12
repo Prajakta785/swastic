@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ export default function Contact() {
 
   const handleSendWhatsApp = () => {
     const text = encodeURIComponent(
-      `Namaste Swastic Footwear!\n` +
+      `Namaste Swastik Footwear!\n` +
         `Name: ${formData.name || 'Customer'}\n` +
         `Mobile: ${formData.mobile || 'Not provided'}\n` +
         `Interested In: ${formData.interest}\n` +
@@ -39,10 +40,10 @@ export default function Contact() {
           transition={{ duration: 0.55 }}
         >
           <span className="section-eyebrow">GET IN TOUCH</span>
-          <h2 className="section-title">Contact Swastic Footwear</h2>
+          <h2 className="section-title">Contact Swastik Footwear</h2>
           <p className="section-description">
             Have a question about our traditional chappals, bulk festive orders, or availability?
-            Reach out to us directly via WhatsApp or send an inquiry below.
+            Reach out to us directly via WhatsApp or send an enquiry below.
           </p>
         </motion.div>
 
@@ -57,7 +58,7 @@ export default function Contact() {
           >
             <h3>Store &amp; Order Support</h3>
             <p className="contact-intro">
-              We assist customers across India with handcrafted footwear inquiries and direct
+              We assist customers across India with handcrafted footwear enquiries and direct
               WhatsApp order confirmation.
             </p>
 
@@ -88,7 +89,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span>Showroom / Workshop</span>
-                  <strong>Swastic Footwear, Traditional Leather Bazaar, Maharashtra, India</strong>
+                  <strong>Swastik Footwear, Traditional Leather Bazaar, Maharashtra, India</strong>
                 </div>
               </div>
 
@@ -113,13 +114,13 @@ export default function Contact() {
                 className="btn btn-whatsapp btn-full"
                 onClick={handleSendWhatsApp}
               >
-                <MessageCircle size={18} />
+                <WhatsAppIcon size={19} />
                 <span>Chat on WhatsApp (+91 73851 27438)</span>
               </button>
             </div>
           </motion.div>
 
-          {/* Inquiry Form Card */}
+          {/* Enquiry Form Card */}
           <motion.div
             className="contact-form-card"
             initial={{ opacity: 0, y: 20 }}
@@ -127,13 +128,13 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3>Send an Inquiry</h3>
+            <h3>Send an Enquiry</h3>
             {submitted ? (
               <div className="contact-success-state">
                 <CheckCircle2 size={42} className="gold-icon" />
                 <h4>Thank You for Reaching Out!</h4>
                 <p>
-                  Click below to send your inquiry straight to our WhatsApp (+91 73851 27438)!
+                  Click below to send your enquiry straight to our WhatsApp (+91 73851 27438)!
                 </p>
                 <div className="contact-success-actions">
                   <button
@@ -141,7 +142,7 @@ export default function Contact() {
                     className="btn btn-whatsapp"
                     onClick={handleSendWhatsApp}
                   >
-                    <MessageCircle size={17} />
+                    <WhatsAppIcon size={18} />
                     <span>Send via WhatsApp Now</span>
                   </button>
                   <button
@@ -149,7 +150,7 @@ export default function Contact() {
                     className="btn btn-secondary"
                     onClick={() => setSubmitted(false)}
                   >
-                    Send Another Message
+                    Send Another Enquiry
                   </button>
                 </div>
               </div>
@@ -221,8 +222,9 @@ export default function Contact() {
 
                 <div className="contact-form-buttons">
                   <button type="submit" className="btn btn-primary btn-full">
-                    <Send size={17} />
-                    <span>Submit Inquiry</span>
+                    <WhatsAppIcon size={18} />
+                    <Send size={16} />
+                    <span>Submit Enquiry</span>
                   </button>
                 </div>
               </form>

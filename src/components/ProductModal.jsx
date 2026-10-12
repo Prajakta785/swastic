@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Star, CheckCircle2, Shield, Sparkles, MessageCircle, Phone } from 'lucide-react';
+import { X, Star, CheckCircle2, Shield, Sparkles, Phone } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function ProductModal({ product, onClose }) {
   const [selectedColor, setSelectedColor] = useState('');
@@ -20,7 +21,7 @@ export default function ProductModal({ product, onClose }) {
 
   const handleWhatsAppDirectInquiry = () => {
     const message = encodeURIComponent(
-      `Namaste Swastic Footwear! I would like to inquire about:\n\n` +
+      `Namaste Swastik Footwear! I would like to enquire about:\n\n` +
         `• Product: ${product.name}\n` +
         `• Finish: ${selectedColor}\n\n` +
         `Please share details.`
@@ -160,8 +161,8 @@ export default function ProductModal({ product, onClose }) {
                   className="btn btn-whatsapp btn-lg"
                   onClick={handleWhatsAppDirectInquiry}
                 >
-                  <MessageCircle size={18} />
-                  <span>Inquire on WhatsApp (+91 73851 27438)</span>
+                  <WhatsAppIcon size={19} />
+                  <span>Enquiry on WhatsApp (+91 73851 27438)</span>
                 </button>
 
                 <a
