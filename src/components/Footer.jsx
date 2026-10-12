@@ -1,0 +1,172 @@
+import React from 'react';
+import { PhoneCall, Mail, MapPin, Heart, ArrowUp } from 'lucide-react';
+
+export default function Footer({ onNavigate, onSelectCategory }) {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <footer className="site-footer">
+      <div className="container footer-grid">
+        {/* Column 1: Brand Info */}
+        <div className="footer-brand-col">
+          <div className="brand-logo footer-logo">
+            <div className="brand-emblem">
+              <svg viewBox="0 0 48 48" width="38" height="38" fill="none">
+                <circle cx="24" cy="24" r="22" stroke="#DFAD55" strokeWidth="1.75" />
+                <path
+                  d="M24 9L28.5 19.5L39 24L28.5 28.5L24 39L19.5 28.5L9 24L19.5 19.5L24 9Z"
+                  fill="rgba(223, 173, 85, 0.2)"
+                  stroke="#DFAD55"
+                  strokeWidth="1.6"
+                />
+                <circle cx="24" cy="24" r="3.2" fill="#DFAD55" />
+              </svg>
+            </div>
+            <div className="brand-text">
+              <span className="brand-title">SWASTIC FOOTWEAR</span>
+              <span className="brand-subtitle">TRADITION IN EVERY STEP</span>
+            </div>
+          </div>
+
+          <p className="footer-bio">
+            Handcrafted traditional leather chappals designed for authentic Indian style, lasting
+            durability, and everyday comfort.
+          </p>
+        </div>
+
+        {/* Column 2: Quick Links */}
+        <div className="footer-links-col">
+          <h4>Quick Navigation</h4>
+          <ul>
+            <li>
+              <a href="#home" onClick={(e) => { e.preventDefault(); onNavigate('#home'); }}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#shop" onClick={(e) => { e.preventDefault(); onNavigate('#shop'); }}>
+                Shop All Chappals
+              </a>
+            </li>
+            <li>
+              <a href="#collection" onClick={(e) => { e.preventDefault(); onNavigate('#collection'); }}>
+                Traditional Collection
+              </a>
+            </li>
+            <li>
+              <a href="#about" onClick={(e) => { e.preventDefault(); onNavigate('#about'); }}>
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="#why-choose-us" onClick={(e) => { e.preventDefault(); onNavigate('#why-choose-us'); }}>
+                Why Choose Us
+              </a>
+            </li>
+            <li>
+              <a href="#reviews" onClick={(e) => { e.preventDefault(); onNavigate('#reviews'); }}>
+                Customer Reviews
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 3: Footwear Collections */}
+        <div className="footer-links-col">
+          <h4>Our Footwear</h4>
+          <ul>
+            <li>
+              <a
+                href="#shop"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectCategory('Brown Leather');
+                  onNavigate('#shop');
+                }}
+              >
+                Traditional Brown Leather Chappal
+              </a>
+            </li>
+            <li>
+              <a
+                href="#shop"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectCategory('White Traditional');
+                  onNavigate('#shop');
+                }}
+              >
+                White Handmade Traditional Chappal
+              </a>
+            </li>
+            <li>
+              <a
+                href="#shop"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectCategory('Braided Leather');
+                  onNavigate('#shop');
+                }}
+              >
+                Premium Braided Leather Chappal
+              </a>
+            </li>
+            <li>
+              <a
+                href="#shop"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectCategory('Kolhapuri Classic');
+                  onNavigate('#shop');
+                }}
+              >
+                Classic Handmade Kolhapuri Chappal
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 4: Store Contact */}
+        <div className="footer-contact-col">
+          <h4>Contact &amp; Orders</h4>
+          <ul className="footer-contact-list">
+            <li>
+              <PhoneCall size={16} className="gold-icon" />
+              <span>+91 98765 43210 (Sample)</span>
+            </li>
+            <li>
+              <Mail size={16} className="gold-icon" />
+              <span>orders@swasticfootwear.in</span>
+            </li>
+            <li>
+              <MapPin size={16} className="gold-icon" />
+              <span>Traditional Leather Footwear Market, Maharashtra, India</span>
+            </li>
+          </ul>
+          <p className="footer-sizes-note">Available Sizes (India/UK): 6, 7, 8, 9, 10</p>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <div className="container footer-bottom-inner">
+          <p>
+            © {new Date().getFullYear()} <strong>Swastic Footwear</strong>. Crafted with{' '}
+            <Heart size={13} fill="#D49B35" stroke="#D49B35" style={{ verticalAlign: 'middle' }} />{' '}
+            for Indian Traditional Footwear Lovers.
+          </p>
+          <button
+            type="button"
+            className="scroll-top-btn"
+            onClick={scrollToTop}
+            aria-label="Scroll back to top"
+          >
+            <span>Back to Top</span>
+            <ArrowUp size={15} />
+          </button>
+        </div>
+      </div>
+    </footer>
+  );
+}
