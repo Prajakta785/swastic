@@ -11,11 +11,6 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   const handleSendWhatsApp = () => {
     const text = encodeURIComponent(
       `Namaste Swastic Footwear!\n` +
@@ -25,6 +20,12 @@ export default function Contact() {
         `Message: ${formData.message || 'Please share footwear details and availability.'}`
     );
     window.open(`https://wa.me/917385127438?text=${text}`, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSendWhatsApp();
+    setSubmitted(true);
   };
 
   return (
