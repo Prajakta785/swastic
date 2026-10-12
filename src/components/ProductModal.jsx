@@ -38,9 +38,8 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
         `• Product: ${product.name}\n` +
         `• Size (UK/IN): ${selectedSize}\n` +
         `• Finish: ${selectedColor}\n` +
-        `• Quantity: ${quantity}\n` +
-        `• Sample Listed Price: ₹${(product.price * quantity).toLocaleString('en-IN')}\n\n` +
-        `Please share availability and final price details.`
+        `• Quantity: ${quantity}\n\n` +
+        `Please share availability and details.`
     );
     window.open(`https://wa.me/919876543210?text=${message}`, '_blank', 'noopener,noreferrer');
   };
@@ -122,7 +121,7 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
                 <div className="product-rating">
                   <Star size={15} fill="#D49B35" stroke="#D49B35" />
                   <span className="rating-score">{product.rating}</span>
-                  <span className="rating-count">({product.reviewCount} sample ratings)</span>
+                  <span className="rating-count">({product.reviewCount} ratings)</span>
                 </div>
               </div>
 
@@ -130,18 +129,6 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
                 {product.name}
               </h2>
               <p className="modal-subtitle">{product.subtitle}</p>
-
-              <div className="modal-price-banner">
-                <div>
-                  <span className="modal-price">₹{product.price.toLocaleString('en-IN')}</span>
-                  {product.originalPrice && (
-                    <span className="modal-original-price">
-                      ₹{product.originalPrice.toLocaleString('en-IN')}
-                    </span>
-                  )}
-                </div>
-                <span className="sample-badge-pill">Sample Price (Editable)</span>
-              </div>
 
               <p className="modal-description">{product.description}</p>
 
@@ -227,11 +214,7 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
                   onClick={handleAddToCart}
                 >
                   <ShoppingBag size={18} />
-                  <span>
-                    {addedSuccess
-                      ? 'Added to Cart!'
-                      : `Add to Cart • ₹${(product.price * quantity).toLocaleString('en-IN')}`}
-                  </span>
+                  <span>{addedSuccess ? 'Added to Cart!' : 'Add to Cart'}</span>
                 </button>
 
                 <button

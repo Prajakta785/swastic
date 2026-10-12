@@ -57,10 +57,6 @@ export default function TraditionalCollection({ products, onQuickView, onAddToCa
                 <li><Check size={15} /> Dual braided cords with traditional leather knots</li>
               </ul>
               <div className="editorial-footer">
-                <div className="editorial-price">
-                  <span>Sample Price</span>
-                  <strong>₹{brownProduct.price.toLocaleString('en-IN')}</strong>
-                </div>
                 <div className="editorial-btns">
                   <button
                     type="button"
@@ -110,10 +106,6 @@ export default function TraditionalCollection({ products, onQuickView, onAddToCa
                 <li><Check size={15} /> Smooth natural white footbed with stamped perimeter</li>
               </ul>
               <div className="editorial-footer">
-                <div className="editorial-price">
-                  <span>Sample Price</span>
-                  <strong>₹{whiteProduct.price.toLocaleString('en-IN')}</strong>
-                </div>
                 <div className="editorial-btns">
                   <button
                     type="button"
@@ -152,10 +144,7 @@ export default function TraditionalCollection({ products, onQuickView, onAddToCa
             <div>
               <span className="mini-tag">Red Gonda Special</span>
               <h4>{kolhapuriGondaProduct.name}</h4>
-              <p>
-                Deep espresso chevron-embossed leather with festive red Gonda tassel • ₹
-                {kolhapuriGondaProduct.price.toLocaleString('en-IN')} (Sample)
-              </p>
+              <p>Deep espresso chevron-embossed leather with festive red Gonda tassel</p>
             </div>
             <ArrowUpRight size={20} className="banner-arrow" />
           </div>
@@ -168,10 +157,7 @@ export default function TraditionalCollection({ products, onQuickView, onAddToCa
             <div>
               <span className="mini-tag">Modern Contrast</span>
               <h4>{whiteBlackStrapProduct.name}</h4>
-              <p>
-                Natural cream-white footbed with bold multi-ribbed black strap • ₹
-                {whiteBlackStrapProduct.price.toLocaleString('en-IN')} (Sample)
-              </p>
+              <p>Natural cream-white footbed with bold multi-ribbed black strap</p>
             </div>
             <ArrowUpRight size={20} className="banner-arrow" />
           </div>

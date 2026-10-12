@@ -30,14 +30,6 @@ export default function ProductGrid({
             <span className="section-eyebrow">HANDCRAFTED FOOTWEAR COLLECTION</span>
             <h2 className="section-title">Explore Our Traditional Chappals</h2>
           </div>
-
-          <div className="sample-price-notice">
-            <Info size={14} />
-            <span>
-              <strong>Sample Preview:</strong> Prices (₹) &amp; ratings editable in{' '}
-              <code>src/data/products.js</code>
-            </span>
-          </div>
         </motion.div>
 
         {/* Search, Category Filter & Sort Toolbar (Single Compact Row) */}
@@ -87,8 +79,6 @@ export default function ProductGrid({
                 aria-label="Sort products"
               >
                 <option value="featured">Featured Collection</option>
-                <option value="price-asc">Price: Low to High (₹)</option>
-                <option value="price-desc">Price: High to Low (₹)</option>
                 <option value="rating">Highest Rated</option>
               </select>
             </div>

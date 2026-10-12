@@ -160,7 +160,7 @@ export default function Hero({ products, onNavigate, onQuickView, onAddToCart })
               {/* Floating Right Feature Pill */}
               <div className="hero-floating-feature-pill">
                 <Feather size={15} className="gold-icon" />
-                <span>Handcrafted Comfort • ₹{spotlightProduct.price.toLocaleString('en-IN')}</span>
+                <span>Handcrafted Comfort</span>
               </div>
 
               {/* Tilted Image Stage with Smooth Auto-Scroll Slide Animation */}

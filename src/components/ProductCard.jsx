@@ -27,7 +27,7 @@ export default function ProductCard({ product, index, onAddToCart, onQuickView }
 
         <div className="rt-floating-pill">
           <Feather size={13} className="gold-icon" />
-          <span>Handcrafted • ₹{product.price.toLocaleString('en-IN')}</span>
+          <span>Handcrafted</span>
         </div>
 
         <div className="rt-photo-frame">
@@ -67,17 +67,6 @@ export default function ProductCard({ product, index, onAddToCart, onQuickView }
           {product.name}
         </h3>
         <p className="product-subtitle">{product.subtitle}</p>
-
-        {/* Price in Indian Rupees */}
-        <div className="product-price-row">
-          <div className="price-main-group">
-            <span className="price-current">₹{product.price.toLocaleString('en-IN')}</span>
-            {product.originalPrice && (
-              <span className="price-original">₹{product.originalPrice.toLocaleString('en-IN')}</span>
-            )}
-          </div>
-          <span className="sample-tag-inline">Sample Price</span>
-        </div>
 
 
         {/* Size Selector (6, 7, 8, 9, 10) */}

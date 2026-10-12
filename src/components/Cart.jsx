@@ -37,25 +37,7 @@ export default function Cart({
   });
   const [orderReference, setOrderReference] = useState('');
 
-  // Calculate subtotal, 20% STRIDE20 discount, shipping, and total
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const discount =
-    appliedCoupon === 'STRIDE20' || appliedCoupon === 'SWASTIC20'
-      ? Math.round(subtotal * 0.2)
-      : 0;
-  const discountedSubtotal = Math.max(0, subtotal - discount);
-  const shipping = discountedSubtotal > 0 ? (discountedSubtotal >= 999 ? 0 : 79) : 0;
-  const total = discountedSubtotal + shipping;
-
-  const handleApplyCoupon = (e) => {
-    e.preventDefault();
-    const clean = couponInput.trim().toUpperCase();
-    if (clean === 'STRIDE20' || clean === 'SWASTIC20') {
-      setAppliedCoupon(clean);
-    } else {
-      setAppliedCoupon('');
-    }
-  };
+  const totalItemsCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const buildWhatsAppOrderUrl = () => {
     const itemLines = cartItems
@@ -63,9 +45,7 @@ export default function Cart({
         (item, idx) =>
           `${idx + 1}. *${item.name}*\n   Size: ${item.selectedSize} | Finish: ${
             item.selectedColor
-          }\n   Qty: ${item.quantity} × ₹${item.price.toLocaleString('en-IN')} = ₹${(
-            item.price * item.quantity
-          ).toLocaleString('en-IN')}`
+          }\n   Qty: ${item.quantity}`
       )
       .join('\n\n');
 
@@ -80,19 +60,11 @@ export default function Cart({
           (customer.notes ? `• Note: ${customer.notes}\n` : '')
         : '';
 
-    const discountLine =
-      discount > 0
-        ? `*Promo (${appliedCoupon} - 20% OFF):* -₹${discount.toLocaleString('en-IN')}\n`
-        : '';
-
     const fullText =
       `Namaste *Swastic Footwear*! 🙏\nI would like to place an order for the following handcrafted footwear:\n\n` +
       `${itemLines}\n\n` +
-      `*Subtotal (Sample):* ₹${subtotal.toLocaleString('en-IN')}\n` +
-      discountLine +
-      `*Shipping:* ${shipping === 0 ? 'FREE' : `₹${shipping}`}\n` +
-      `*Estimated Total:* ₹${total.toLocaleString('en-IN')}` +
-      `${customerBlock}\n\nPlease confirm availability and final payment details.`;
+      `*Total Pairs:* ${totalItemsCount}` +
+      `${customerBlock}\n\nPlease confirm availability and order details.`;
 
     return `https://wa.me/919876543210?text=${encodeURIComponent(fullText)}`;
   };
@@ -156,9 +128,8 @@ export default function Cart({
             <div className="demo-checkout-banner">
               <AlertCircle size={15} />
               <span>
-                <strong>Demo Store Notice:</strong> Checkout is in demo mode (not connected to a
-                live payment gateway). Use the <strong>WhatsApp Order</strong> button to send your
-                order directly!
+                <strong>Direct Order Notice:</strong> Select your sizes and use the{' '}
+                <strong>WhatsApp Order</strong> button to send your order directly!
               </span>
             </div>
 
@@ -259,58 +230,18 @@ export default function Cart({
                               <Plus size={13} />
                             </button>
                           </div>
-
-                          <div className="cart-item-price">
-                            <span>₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
-                            <small>Sample Price</small>
-                          </div>
                         </div>
                       </div>
                     </motion.div>
                   ))}
-
-                  {/* Promo Code Box (STRIDE20) */}
-                  <form className="coupon-box" onSubmit={handleApplyCoupon}>
-                    <div className="coupon-input-row">
-                      <Tag size={15} className="gold-icon" />
-                      <input
-                        type="text"
-                        placeholder="Promo code (STRIDE20)"
-                        value={couponInput}
-                        onChange={(e) => setCouponInput(e.target.value)}
-                      />
-                      <button type="submit" className="coupon-apply-btn">
-                        Apply
-                      </button>
-                    </div>
-                    {appliedCoupon && (
-                      <span className="coupon-success-msg">
-                        ⚡ Code <strong>{appliedCoupon}</strong> active — 20% OFF applied!
-                      </span>
-                    )}
-                  </form>
                 </div>
 
-                {/* Cart Footer with Totals & Actions */}
+                {/* Cart Footer with Summary & Actions */}
                 <div className="cart-footer">
                   <div className="cart-summary-rows">
-                    <div className="summary-line">
-                      <span>Subtotal ({cartItems.reduce((acc, i) => acc + i.quantity, 0)} items)</span>
-                      <strong>₹{subtotal.toLocaleString('en-IN')}</strong>
-                    </div>
-                    {discount > 0 && (
-                      <div className="summary-line discount-line">
-                        <span>Promo Discount ({appliedCoupon} • 20% OFF)</span>
-                        <strong>-₹{discount.toLocaleString('en-IN')}</strong>
-                      </div>
-                    )}
-                    <div className="summary-line">
-                      <span>Estimated Delivery</span>
-                      <strong>{shipping === 0 ? 'FREE' : `₹${shipping}`}</strong>
-                    </div>
                     <div className="summary-line total-line">
-                      <span>Total Amount (Sample)</span>
-                      <strong>₹{total.toLocaleString('en-IN')}</strong>
+                      <span>Total Selected Pairs</span>
+                      <strong>{totalItemsCount}</strong>
                     </div>
                   </div>
 
@@ -427,7 +358,7 @@ export default function Cart({
 
                   {/* Order Summary inside Checkout */}
                   <div className="checkout-order-summary">
-                    <h3>Order Summary ({cartItems.reduce((a, b) => a + b.quantity, 0)} Items)</h3>
+                    <h3>Order Summary ({totalItemsCount} Items)</h3>
                     <ul className="checkout-mini-list">
                       {cartItems.map((item) => (
                         <li key={item.cartKey}>
@@ -437,29 +368,15 @@ export default function Cart({
                               Size {item.selectedSize} • {item.selectedColor} × {item.quantity}
                             </span>
                           </div>
-                          <strong>₹{(item.price * item.quantity).toLocaleString('en-IN')}</strong>
+                          <strong>Qty: {item.quantity}</strong>
                         </li>
                       ))}
                     </ul>
 
                     <div className="cart-summary-rows">
-                      <div className="summary-line">
-                        <span>Subtotal</span>
-                        <strong>₹{subtotal.toLocaleString('en-IN')}</strong>
-                      </div>
-                      {discount > 0 && (
-                        <div className="summary-line discount-line">
-                          <span>Promo ({appliedCoupon})</span>
-                          <strong>-₹{discount.toLocaleString('en-IN')}</strong>
-                        </div>
-                      )}
-                      <div className="summary-line">
-                        <span>Shipping</span>
-                        <strong>{shipping === 0 ? 'FREE' : `₹${shipping}`}</strong>
-                      </div>
                       <div className="summary-line total-line">
-                        <span>Total Payable (Sample)</span>
-                        <strong>₹{total.toLocaleString('en-IN')}</strong>
+                        <span>Total Selected Pairs</span>
+                        <strong>{totalItemsCount}</strong>
                       </div>
                     </div>
                   </div>
@@ -478,7 +395,7 @@ export default function Cart({
                     </a>
 
                     <button type="submit" className="btn btn-primary btn-full">
-                      <span>Complete Demo Checkout</span>
+                      <span>Complete Order Summary</span>
                     </button>
                   </div>
                 </div>
@@ -491,12 +408,11 @@ export default function Cart({
                 <div className="success-icon-ring">
                   <CheckCircle2 size={46} className="gold-icon" />
                 </div>
-                <span className="demo-badge">DEMO ORDER RECORDED • REF #{orderReference}</span>
+                <span className="demo-badge">ORDER RECORDED • REF #{orderReference}</span>
                 <h3>Thank You, {customer.name || 'Valued Customer'}!</h3>
                 <p>
-                  This is a <strong>demo checkout confirmation</strong> (no online payment was
-                  charged). To send your order details directly to the shop owner on WhatsApp, click
-                  the button below!
+                  To send your selected footwear details directly to the shop owner on WhatsApp,
+                  click the button below!
                 </p>
 
                 <div className="success-summary-box">
@@ -511,8 +427,8 @@ export default function Cart({
                     </strong>
                   </div>
                   <div>
-                    <span>Order Total (Sample):</span>
-                    <strong>₹{total.toLocaleString('en-IN')}</strong>
+                    <span>Total Pairs Ordered:</span>
+                    <strong>{totalItemsCount}</strong>
                   </div>
                 </div>
 

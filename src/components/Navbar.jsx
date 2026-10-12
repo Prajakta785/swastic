@@ -68,7 +68,7 @@ export default function Navbar({
     '🩴 ULTRA-LIGHT CUSHIONED LEATHER FOOTBED',
     '📦 CASH ON DELIVERY AVAILABLE',
     '✨ 30-DAY NO-QUESTIONS-ASKED RETURNS',
-    '⚡ FREE SHIPPING ACROSS INDIA ON ORDERS ABOVE ₹999'
+    '⚡ FAST & SAFE DELIVERY ACROSS INDIA'
   ];
 
   const handleLinkClick = (e, href) => {
