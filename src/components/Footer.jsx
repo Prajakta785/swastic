@@ -12,27 +12,43 @@ export default function Footer({ onNavigate, onSelectCategory }) {
         {/* Column 1: Brand Info */}
         <div className="footer-brand-col">
           <div className="brand-logo footer-logo">
-            <div className="brand-emblem">
-              <svg viewBox="0 0 48 48" width="38" height="38" fill="none">
-                <circle cx="24" cy="24" r="22" stroke="#DFAD55" strokeWidth="1.75" />
-                <path
-                  d="M24 9L28.5 19.5L39 24L28.5 28.5L24 39L19.5 28.5L9 24L19.5 19.5L24 9Z"
-                  fill="rgba(223, 173, 85, 0.2)"
-                  stroke="#DFAD55"
-                  strokeWidth="1.6"
-                />
-                <circle cx="24" cy="24" r="3.2" fill="#DFAD55" />
+            <div className="brand-emblem swastik-royal-emblem">
+              <svg viewBox="0 0 64 64" width="44" height="44" fill="none">
+                <defs>
+                  <linearGradient id="footerSwastikGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#FFE08A" />
+                    <stop offset="50%" stopColor="#D49B35" />
+                    <stop offset="100%" stopColor="#9A6818" />
+                  </linearGradient>
+                </defs>
+                <circle cx="32" cy="32" r="28" fill="#1F110B" stroke="url(#footerSwastikGold)" strokeWidth="2.4" />
+                <circle cx="32" cy="32" r="24" stroke="url(#footerSwastikGold)" strokeWidth="0.9" strokeDasharray="3 2" />
+                <g stroke="url(#footerSwastikGold)" strokeWidth="3.8" strokeLinecap="square" strokeLinejoin="miter">
+                  <path d="M32 16 V48" />
+                  <path d="M32 16 H45" />
+                  <path d="M19 48 H32" />
+                  <path d="M16 32 H48" />
+                  <path d="M48 32 V45" />
+                  <path d="M16 19 V32" />
+                </g>
+                <circle cx="24.5" cy="24.5" r="2" fill="url(#footerSwastikGold)" />
+                <circle cx="39.5" cy="24.5" r="2" fill="url(#footerSwastikGold)" />
+                <circle cx="24.5" cy="39.5" r="2" fill="url(#footerSwastikGold)" />
+                <circle cx="39.5" cy="39.5" r="2" fill="url(#footerSwastikGold)" />
               </svg>
             </div>
             <div className="brand-text">
-              <span className="brand-title">SWASTIC FOOTWEAR</span>
-              <span className="brand-subtitle">TRADITION IN EVERY STEP</span>
+              <span className="brand-title">SWASTIK</span>
+              <span className="brand-subtitle-lines">
+                <span className="brand-line" />
+                <span className="brand-subtitle">FOOTWEAR</span>
+                <span className="brand-line" />
+              </span>
             </div>
           </div>
 
           <p className="footer-bio">
-            Handcrafted traditional leather chappals designed for authentic Indian style, lasting
-            durability, and everyday comfort.
+            Premium Handcrafted Kolhapuri Chappals • Manufacturer | Wholesale | Retail.
           </p>
         </div>
 
@@ -142,7 +158,7 @@ export default function Footer({ onNavigate, onSelectCategory }) {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <p>
-            © {new Date().getFullYear()} <strong>Swastic Footwear</strong>. Crafted with{' '}
+            © {new Date().getFullYear()} <strong>SWASTIK FOOTWEAR</strong>. Crafted with{' '}
             <Heart size={13} fill="#D49B35" stroke="#D49B35" style={{ verticalAlign: 'middle' }} />{' '}
             for Indian Traditional Footwear Lovers.
           </p>

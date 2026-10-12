@@ -64,24 +64,69 @@ export default function Hero({ products, onNavigate, onQuickView, onAddToCart })
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
+          {/* Royal Golden Swastik Crest & SWASTIK FOOTWEAR Header */}
           <motion.div
-            className="hero-eyebrow"
-            initial={{ opacity: 0, y: 15 }}
+            className="hero-royal-brand-lockup"
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.5 }}
+            transition={{ delay: 0.15, duration: 0.6 }}
           >
-            <Sparkles size={15} className="gold-icon" />
-            <span>SWASTIC FOOTWEAR • AUTHENTIC INDIAN CRAFTSMANSHIP</span>
-          </motion.div>
+            <div className="hero-swastik-crest-row">
+              <svg className="swastik-flourish swastik-flourish-left" viewBox="0 0 80 28" width="68" height="24" fill="none">
+                <path d="M78 22 C58 22, 46 8, 28 14 C16 18, 12 24, 4 22" stroke="#D49B35" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M64 16 C52 10, 42 18, 36 22" stroke="#D49B35" strokeWidth="1.2" strokeLinecap="round" />
+                <circle cx="4" cy="22" r="2.2" fill="#D49B35" />
+                <circle cx="48" cy="14" r="1.8" fill="#FFE08A" />
+              </svg>
 
-          <motion.h1
-            className="hero-heading"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25, duration: 0.65 }}
-          >
-            Tradition in <span className="gold-gradient-text">Every Step</span>
-          </motion.h1>
+              <div className="hero-swastik-medallion">
+                <svg viewBox="0 0 64 64" width="56" height="56" fill="none">
+                  <defs>
+                    <linearGradient id="heroSwastikGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#FFE494" />
+                      <stop offset="50%" stopColor="#D49B35" />
+                      <stop offset="100%" stopColor="#946115" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="32" cy="32" r="29" fill="#1F110B" stroke="url(#heroSwastikGold)" strokeWidth="2.5" />
+                  <circle cx="32" cy="32" r="25" stroke="url(#heroSwastikGold)" strokeWidth="0.9" strokeDasharray="3 2" />
+                  <g stroke="url(#heroSwastikGold)" strokeWidth="4" strokeLinecap="square" strokeLinejoin="miter">
+                    <path d="M32 15 V49" />
+                    <path d="M32 15 H46" />
+                    <path d="M18 49 H32" />
+                    <path d="M15 32 H49" />
+                    <path d="M49 32 V46" />
+                    <path d="M15 18 V32" />
+                  </g>
+                  <circle cx="24" cy="24" r="2.1" fill="url(#heroSwastikGold)" />
+                  <circle cx="40" cy="24" r="2.1" fill="url(#heroSwastikGold)" />
+                  <circle cx="24" cy="40" r="2.1" fill="url(#heroSwastikGold)" />
+                  <circle cx="40" cy="40" r="2.1" fill="url(#heroSwastikGold)" />
+                </svg>
+              </div>
+
+              <svg className="swastik-flourish swastik-flourish-right" viewBox="0 0 80 28" width="68" height="24" fill="none">
+                <path d="M2 22 C22 22, 34 8, 52 14 C64 18, 68 24, 76 22" stroke="#D49B35" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M16 16 C28 10, 38 18, 44 22" stroke="#D49B35" strokeWidth="1.2" strokeLinecap="round" />
+                <circle cx="76" cy="22" r="2.2" fill="#D49B35" />
+                <circle cx="32" cy="14" r="1.8" fill="#FFE08A" />
+              </svg>
+            </div>
+
+            <h1 className="hero-swastik-title">SWASTIK</h1>
+            <div className="hero-footwear-divider">
+              <span className="footwear-rule" />
+              <span className="footwear-subword">FOOTWEAR</span>
+              <span className="footwear-rule" />
+            </div>
+
+            <p className="hero-handcrafted-lead">Premium Handcrafted</p>
+            <p className="hero-kolhapuri-script">Kolhapuri Chappals</p>
+
+            <div className="hero-mwr-badge">
+              <span>MANUFACTURER &nbsp;|&nbsp; WHOLESALE &nbsp;|&nbsp; RETAIL</span>
+            </div>
+          </motion.div>
 
           <motion.p
             className="hero-subtitle"

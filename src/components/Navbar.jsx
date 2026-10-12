@@ -96,10 +96,10 @@ export default function Navbar({
           <div className="top-promo-left">
             <span className="limited-drop-pill">
               <Zap size={12} fill="currentColor" />
-              SWASTIC FOOTWEAR
+              SWASTIK FOOTWEAR
             </span>
             <p className="promo-code-text">
-              Tradition in Every Step • <strong>परंपरेची आधुनिक पावलं</strong>
+              Premium Handcrafted Kolhapuri Chappals • <strong>MANUFACTURER | WHOLESALE | RETAIL</strong>
             </p>
           </div>
 
@@ -135,36 +135,50 @@ export default function Navbar({
 
       {/* TIER 3: Main Navigation Bar */}
       <nav className="navbar container" aria-label="Main Navigation">
-        {/* Brand Logo */}
+        {/* Brand Logo — Golden Swastik Emblem + SWASTIK FOOTWEAR */}
         <a
           href="#home"
           onClick={(e) => handleLinkClick(e, '#home')}
           className="brand-logo"
-          aria-label="Swastic Footwear Home"
+          aria-label="Swastik Footwear Home"
         >
-          <div className="brand-emblem">
-            <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-              <circle cx="24" cy="24" r="22" stroke="var(--accent-primary)" strokeWidth="2" />
-              <circle
-                cx="24"
-                cy="24"
-                r="18"
-                stroke="var(--accent-primary)"
-                strokeWidth="1"
-                strokeDasharray="3 2"
-              />
-              <path
-                d="M24 9L28.5 19.5L39 24L28.5 28.5L24 39L19.5 28.5L9 24L19.5 19.5L24 9Z"
-                fill="var(--accent-soft)"
-                stroke="var(--accent-primary)"
-                strokeWidth="1.8"
-              />
-              <circle cx="24" cy="24" r="3.4" fill="var(--accent-primary)" />
+          <div className="brand-emblem swastik-royal-emblem">
+            <svg viewBox="0 0 64 64" width="46" height="46" fill="none">
+              <defs>
+                <linearGradient id="swastikGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FFE08A" />
+                  <stop offset="45%" stopColor="#D49B35" />
+                  <stop offset="100%" stopColor="#9A6818" />
+                </linearGradient>
+              </defs>
+              {/* Dark Rich Brown Medallion Base */}
+              <circle cx="32" cy="32" r="28" fill="#1F110B" stroke="url(#swastikGoldGrad)" strokeWidth="2.4" />
+              <circle cx="32" cy="32" r="24" stroke="url(#swastikGoldGrad)" strokeWidth="0.9" strokeDasharray="3 2" />
+              {/* Auspicious Right-Facing Golden Swastik Symbol */}
+              <g stroke="url(#swastikGoldGrad)" strokeWidth="3.8" strokeLinecap="square" strokeLinejoin="miter">
+                {/* Vertical bar + top-right arm + bottom-left arm */}
+                <path d="M32 16 V48" />
+                <path d="M32 16 H45" />
+                <path d="M19 48 H32" />
+                {/* Horizontal bar + bottom-right arm + top-left arm */}
+                <path d="M16 32 H48" />
+                <path d="M48 32 V45" />
+                <path d="M16 19 V32" />
+              </g>
+              {/* Four Auspicious Golden Bindu Dots */}
+              <circle cx="24.5" cy="24.5" r="2" fill="url(#swastikGoldGrad)" />
+              <circle cx="39.5" cy="24.5" r="2" fill="url(#swastikGoldGrad)" />
+              <circle cx="24.5" cy="39.5" r="2" fill="url(#swastikGoldGrad)" />
+              <circle cx="39.5" cy="39.5" r="2" fill="url(#swastikGoldGrad)" />
             </svg>
           </div>
           <div className="brand-text">
-            <span className="brand-title">SWASTIC FOOTWEAR</span>
-            <span className="brand-subtitle">HANDCRAFTED HERITAGE</span>
+            <span className="brand-title">SWASTIK</span>
+            <span className="brand-subtitle-lines">
+              <span className="brand-line" />
+              <span className="brand-subtitle">FOOTWEAR</span>
+              <span className="brand-line" />
+            </span>
           </div>
         </a>
 
