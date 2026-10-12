@@ -16,13 +16,13 @@ export default function About({ onNavigate }) {
         >
           <div className="collage-primary">
             <img
-              src="/images/real-dark-brown-red-gonda-chappal.jpg"
+              src="/images/premium-leather-sandals-poster.jpg"
               alt="Swastic Footwear Handcrafted Dark Brown Red-Gonda Kolhapuri Chappal"
             />
           </div>
           <div className="collage-secondary">
             <img
-              src="/images/real-white-braided-brown-full.jpg"
+              src="/images/poster-white-braided.jpg"
               alt="Swastic Footwear White Handmade Traditional Chappal"
             />
           </div>
