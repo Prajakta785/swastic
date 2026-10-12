@@ -79,7 +79,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span>Email Support</span>
-                  <strong>orders@swasticfootwear.in</strong>
+                  <strong>orders@swastikfootwear.in</strong>
                 </div>
               </div>
 
@@ -187,8 +187,8 @@ export default function Contact() {
                     value={formData.interest}
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
                   >
-                    <option value="Premium Leather Chappal (Red Gonda)">
-                      Premium Leather Chappal (Red Gonda)
+                    <option value="Classic Handmade Kolhapuri Chappal (Red Gonda)">
+                      Classic Handmade Kolhapuri Chappal (Red Gonda)
                     </option>
                     <option value="Traditional Brown Leather Chappal">
                       Traditional Brown Leather Chappal
@@ -196,11 +196,29 @@ export default function Contact() {
                     <option value="White Handmade Traditional Chappal">
                       White Handmade Traditional Chappal
                     </option>
-                    <option value="Premium Braided Leather Chappal">
-                      Premium Braided Leather Chappal
+                    <option value="Festive Paithani Zari Brocade & Gold Veni Chappal">
+                      Festive Paithani Zari Brocade &amp; Gold Veni Chappal
                     </option>
-                    <option value="Classic Handmade Kolhapuri Chappal">
-                      Classic Handmade Kolhapuri Chappal
+                    <option value="Dark Espresso Single-Veni Golden Medallion Chappal">
+                      Dark Espresso Single-Veni Golden Medallion Chappal
+                    </option>
+                    <option value="Golden Sunburst Trio — 3-Medallion Wave Strap Chappal">
+                      Golden Sunburst Trio — 3-Medallion Wave Strap Chappal
+                    </option>
+                    <option value="White & Black Ribbed Strap Traditional Chappal">
+                      White &amp; Black Ribbed Strap Traditional Chappal
+                    </option>
+                    <option value="Artisan Dual-Tone Braided Strap Chappal (Full Pair)">
+                      Artisan Dual-Tone Braided Strap Chappal (Full Pair)
+                    </option>
+                    <option value="Hand-Tooled Chevron & Red Gonda Kolhapuri (Artisan Edition)">
+                      Hand-Tooled Chevron &amp; Red Gonda Kolhapuri (Artisan Edition)
+                    </option>
+                    <option value="Classic Ribbed-Strap Trio — Black, Brown & Ivory White">
+                      Classic Ribbed-Strap Trio — Black, Brown &amp; Ivory White
+                    </option>
+                    <option value="Ivory Footbed & Dark Espresso Ribbed-Strap Chappal">
+                      Ivory Footbed &amp; Dark Espresso Ribbed-Strap Chappal
                     </option>
                     <option value="Custom / Bulk Festive Order">
                       Custom / Bulk Festive Order

@@ -291,7 +291,7 @@ export default function Navbar({
           <a
             href="tel:+917385127438"
             className="cart-trigger-btn"
-            aria-label="Call Swastic Footwear +91 73851 27438"
+            aria-label="Call Swastik Footwear +91 73851 27438"
           >
             <Phone size={16} />
             <span className="cart-btn-label">73851 27438</span>

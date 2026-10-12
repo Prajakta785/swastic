@@ -126,7 +126,7 @@ export default function Footer({ onNavigate, onSelectCategory }) {
             </li>
             <li>
               <Mail size={16} className="gold-icon" />
-              <span>orders@swasticfootwear.in</span>
+              <span>orders@swastikfootwear.in</span>
             </li>
             <li>
               <MapPin size={16} className="gold-icon" />
